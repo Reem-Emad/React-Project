@@ -16,3 +16,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.HomePage
+{
+  background-image: url("./images/masthead_background.jpg");
+}
+.SignIn_Form
+{
+  position: absolute;
+  right:20px;
+}
+.SignIn_form-btn
+{
+  background-color: #58371F !important;
+  border-color: #58371F !important;
+}
+.SignUp_form
+{
+  width:35%;
+  position: relative;
+  left:805px;
+  margin:25px;
+
+}
+.SignUp_form-btn
+{
+  background-color:  #FFD56D !important;
+  border-color:  #FFD56D !important;
+ 
+}
