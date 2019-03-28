@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dropdown, Row, Container, Col, Card, Button } from 'react-bootstrap';
 import './Categories.css';
-import categories from '../../categories';
+import categories from '../../Categories';
 import AllBooks from '../Books/AllBooks';
 class Categories extends React.Component {
     state = {

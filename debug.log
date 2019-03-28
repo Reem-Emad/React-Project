@@ -18,6 +18,11 @@
 =======
 [0327/143041.615:ERROR:crash_report_database_win.cc(428)] unexpected header
 [0327/173423.541:ERROR:crash_report_database_win.cc(428)] unexpected header
+<<<<<<< HEAD
 >>>>>>> f35469ee70fa4d7f6f279d788668a62493259db5
 [0328/205439.696:ERROR:crash_report_database_win.cc(428)] unexpected header
 [0328/211124.658:ERROR:crash_report_database_win.cc(428)] unexpected header
+=======
+[0328/145638.716:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0328/202801.313:ERROR:crash_report_database_win.cc(428)] unexpected header
+>>>>>>> 0ec9ee8b20b3a0fd12d98cd5babf63567c547229
