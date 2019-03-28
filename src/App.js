@@ -1,22 +1,29 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link,Switch } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
-// import './components/User/Home.css';
-import { BrowserRouter as Router, Route, Link,Switch } from 'react-router-dom';
 import HomePage from './components/SignIn-SignUp/Home_Page';
 import Categories from './components/Categories/Categories';
 import AllBooks from './components/Books/AllBooks';
 import Book from './components/Books/Book';
 import BookDetailes from './components/Books/BookDetails';
+import Users from './Users';
 
 
+export const MyContext = React.createContext({ users:Users });
 class App extends React.PureComponent
 {
+    state={
+       users:Users,        
+    }
     render()
     {
+        const value={
+            state: this.state,
+        }
         return(
             <>
-           
+            <MyContext.Provider value={value}>
             <Router>
                 <Switch>
                 <Route exact path="/" component={HomePage} />
@@ -24,8 +31,9 @@ class App extends React.PureComponent
                 <Route exact path="/AllBooks" component={AllBooks}/>
                 <Route exact path="/Book" component={Book}/>
                 <Route exact path="/bookDetailes/:id" component={BookDetailes}/>    
-                 </Switch>
+                 </Switch>                
             </Router>
+            </MyContext.Provider>
             </>
         )
     }
