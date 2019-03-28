@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
+// import './components/User/Home.css';
 import { BrowserRouter as Router, Route, Link,Switch } from 'react-router-dom';
 import HomePage from './components/SignIn-SignUp/Home_Page';
+import Categories from './components/Categories/Categories';
+import AllBooks from './components/Books/AllBooks';
+import Book from './components/Books/Book';
+import BookDetailes from './components/Books/BookDetails';
+
 
 class App extends React.PureComponent
 {
@@ -14,6 +20,10 @@ class App extends React.PureComponent
             <Router>
                 <Switch>
                 <Route exact path="/" component={HomePage} />
+                <Route exact path="/Categories" component={Categories}/>
+                <Route exact path="/AllBooks" component={AllBooks}/>
+                <Route exact path="/Book" component={Book}/>
+                <Route exact path="/bookDetailes/:id" component={BookDetailes}/>    
                  </Switch>
             </Router>
             </>
