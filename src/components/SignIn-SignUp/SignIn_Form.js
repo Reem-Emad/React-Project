@@ -34,14 +34,13 @@ class SignIn extends React.PureComponent {
       
 
     }
-    handleEmailChange = (e) => {
-        this.setState({ enteredMail: e.target.value })
+    handleChange = (e) => {
+        const key=e.target.name;
+        const value=e.target.value;
+        this.setState({ [key]: value })
     }
 
-    handlePasswordChange = (e) => {
-        this.setState({ enteredPassword: e.target.value })
-
-    }
+   
     render() {
         return (
             <MyContext.Consumer>
@@ -55,10 +54,10 @@ class SignIn extends React.PureComponent {
                                 <Navbar.Collapse id="basic-navbar-nav">
                                     <Form inline className="SignIn_Form" onSubmit={this.handleSubmit(value.state.users)}>
                                         <Form.Group className="mr-2" >
-                                            <Form.Control type="email" placeholder="Enter email" onChange={this.handleEmailChange} value={this.state.enteredMail} />
+                                            <Form.Control type="email" name='enteredMail' placeholder="Enter email" onChange={this.handleChange} value={this.state.enteredMail} />
                                         </Form.Group>
                                         <Form.Group className="mr-2" >
-                                            <Form.Control type="password" placeholder="Password" onChange={this.handlePasswordChange} value={this.state.enteredPassword} />
+                                            <Form.Control type="password" name='enteredPassword' placeholder="Password" onChange={this.handleChange} value={this.state.enteredPassword} />
                                         </Form.Group>
                                         <Button variant="primary" type="submit" className="mr-2 SignIn_form-btn">
                                             Sign in

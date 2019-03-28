@@ -11,11 +11,17 @@ class App extends React.PureComponent
     state={
        users:Users,        
     }
+    addNewUser=(newUser)=>{
+        const {users}=this.state;
+        this.setState({users: [...users,newUser]});
+    }
     render()
     {
         const value={
             state: this.state,
+            addNewUser: this.addNewUser,
         }
+
         return(
             <>
             <MyContext.Provider value={value}>
