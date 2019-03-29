@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './components/SignIn-SignUp/SignIn-SignUp.css';
+import './components/Shared/Navbar.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

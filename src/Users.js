@@ -7,6 +7,7 @@ export default [
       password: '1234',
       image:
         'https://media.istockphoto.com/photos/portrait-of-smiling-teen-boy-outdoors-picture-id589098830?k=6&m=589098830&s=612x612&w=0&h=Ut2FNWjS9CxXG5DdDduLqOEhcV0RBzRvsLrh9qS5EaY=',
+      Admin: true,
     },
     {
         id: 2,
@@ -15,6 +16,8 @@ export default [
         email: 'reem@gmail.com',
         password: 'r12m',
         image: 'N/A',
+          Admin: true,
+
     },
     {
         id: 3,
@@ -23,6 +26,8 @@ export default [
         email: 'dina@gmail.com',
         password: 'dina123',
         image: 'N/A',
+      Admin: false
+
     },
     {
         id: 4,
@@ -31,6 +36,8 @@ export default [
         email: 'yousry@gmail.com',
         password: 'yousry123mohamed',
         image: 'https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      Admin: false
+        
     },
     
   ];

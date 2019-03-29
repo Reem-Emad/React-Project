@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Link,Switch } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -10,23 +10,29 @@ import AuthorDetails from './components/Authors/Author';
 import BookDetailes from './components/Books/BookDetails';
 import Users from './Users';
 import AdminPage from './components/Admin_Page/Admin_page';
-
 import AllAuthors from './components/Authors/AllAuthors';
+
+
 export const MyContext = React.createContext({ users:Users });
 class App extends React.PureComponent
 {
     state={
        users:Users,        
+       loginedUser:{}
     }
     addNewUser=(newUser)=>{
         const {users}=this.state;
         this.setState({users: [...users,newUser]});
+    }
+    addLoginedUser=(loginedUser) =>{
+        this.setState({loginedUser});
     }
     render()
     {
         const value={
             state: this.state,
             addNewUser: this.addNewUser,
+            addLoginedUser: this.addLoginedUser
         }
 
         return(
@@ -34,7 +40,7 @@ class App extends React.PureComponent
             <MyContext.Provider value={value}>
             <Router>
                 <Switch>
-                <Route exact path="/" component={HomePage} />
+                 <Route exact path="/" component={HomePage} />
                 <Route exact path="/AdminPage" component={AdminPage} />
                 <Route exact path="/Categories" component={Categories}/>
                 <Route exact path="/AllBooks" component={AllBooks}/>

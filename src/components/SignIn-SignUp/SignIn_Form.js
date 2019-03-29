@@ -14,7 +14,7 @@ class SignIn extends React.PureComponent {
         enteredPassword: '',
         enteredDataValidation: ''
     }
-    handleSubmit = (existingUsers) => (event) => {
+    handleSubmit = (existingUsers,addLoginedUser) => (event) => {
         event.preventDefault();
         const user = existingUsers.find(element => {
             if (element.email === this.state.enteredMail)
@@ -23,9 +23,16 @@ class SignIn extends React.PureComponent {
         if (user == undefined)
             this.setState({ enteredDataValidation: 'account not exist' })
         else {
-            if (user.password == this.state.enteredPassword) {
-                this.setState({ enteredDataValidation: 'vaild' })
-                // this.props.history.push('/user');
+            if (user.password == this.state.enteredPassword && user.Admin==false) {
+                this.setState({ enteredDataValidation: 'vaild user' })
+                addLoginedUser(user);
+                // this.props.history.push('/navbar');
+            }
+            else if(user.password == this.state.enteredPassword && user.Admin==true)
+            {
+                this.setState({ enteredDataValidation: 'vaild admin' })
+                addLoginedUser(user);
+                // this.props.history.push('/navbar');
             }
             else
                 this.setState({ enteredDataValidation: 'incorrect password' })
@@ -51,7 +58,7 @@ class SignIn extends React.PureComponent {
                                 <Navbar.Brand href="#home"><Image src={Logo} /></Navbar.Brand>
                                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                                 <Navbar.Collapse id="basic-navbar-nav">
-                                    <Form inline className="SignIn_Form" onSubmit={this.handleSubmit(value.state.users)}>
+                                    <Form inline className="SignIn_Form" onSubmit={this.handleSubmit(value.state.users,value.addLoginedUser)}>
                                         <Form.Group className="mr-2" >
                                             <Form.Control type="email" name='enteredMail' placeholder="Enter email" onChange={this.handleChange} value={this.state.enteredMail} />
                                         </Form.Group>
@@ -63,8 +70,7 @@ class SignIn extends React.PureComponent {
                                           </Button>
                                         <Form.Text style={{ color: "red" }}>{this.state.enteredDataValidation}</Form.Text>
                                     </Form>
-                                    <Button variant="primary" className="mr-2 SignIn_form-btn" >
-                                       <Link to='/AdminPage' >Sign in as admin</Link></Button>
+                                  
                                 </Navbar.Collapse>
                             </Navbar>
                         </>
