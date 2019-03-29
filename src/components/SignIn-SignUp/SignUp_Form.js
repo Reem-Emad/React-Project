@@ -48,6 +48,7 @@ class SignUp extends React.PureComponent {
          errors.push({name:'email',msg:'email already used'})
 
         if(repeatedPassword!=password)
+        
         errors.push({name:'repeatedPassword',msg:'Not matched with password'})
         this.setState({error: errors},()=>{
             if(this.state.error.length==0)
