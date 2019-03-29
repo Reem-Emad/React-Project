@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link,Switch , withRouter} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, Switch, withRouter } from 'react-router-dom';
 import { Navbar } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
@@ -16,22 +16,21 @@ class SignIn extends React.PureComponent {
     }
     handleSubmit = (existingUsers) => (event) => {
         event.preventDefault();
-       const user=existingUsers.find(element => {
-          if( element.email===this.state.enteredMail)
-            return element;
-       }) 
-       if(user==undefined)
-        this.setState({enteredDataValidation: 'account not exist'})
-       else
-       {
-           if(user.password==this.state.enteredPassword){
-           this.setState({enteredDataValidation: 'vaild'})
-            // this.props.history.push('/user');
-           }
-           else
-           this.setState({enteredDataValidation: 'incorrect password'})
-       }
-      
+        const user = existingUsers.find(element => {
+            if (element.email === this.state.enteredMail)
+                return element;
+        })
+        if (user == undefined)
+            this.setState({ enteredDataValidation: 'account not exist' })
+        else {
+            if (user.password == this.state.enteredPassword) {
+                this.setState({ enteredDataValidation: 'vaild' })
+                // this.props.history.push('/user');
+            }
+            else
+                this.setState({ enteredDataValidation: 'incorrect password' })
+        }
+
 
     }
     handleEmailChange = (e) => {
@@ -48,7 +47,7 @@ class SignIn extends React.PureComponent {
 
                 {value =>
                     (
-                        <>       
+                        <>
                             <Navbar expand="lg">
                                 <Navbar.Brand href="#home"><Image src={Logo} /></Navbar.Brand>
                                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -65,7 +64,8 @@ class SignIn extends React.PureComponent {
                                           </Button>
                                         <Form.Text style={{ color: "red" }}>{this.state.enteredDataValidation}</Form.Text>
                                     </Form>
-                                    <Button variant="primary" className="mr-2 SignIn_form-btn">Sign in as admin</Button>
+                                    <Button variant="primary" className="mr-2 SignIn_form-btn" >
+                                       <Link to='/AdminPage' >Sign in as admin</Link></Button>
                                 </Navbar.Collapse>
                             </Navbar>
                         </>
