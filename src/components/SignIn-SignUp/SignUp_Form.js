@@ -14,7 +14,7 @@ class SignUp extends React.PureComponent {
         image:'',
         error:[{name:'',msg:''}]
     }
-    handleSubmit=(existingUsers) => (e) => {
+    handleSubmit=(existingUsers,addNewUser) => (e) => {
         e.preventDefault();
         const { FName, LName, email, password, repeatedPassword, image } = this.state;
         const validationContext = new SimpleSchema({
@@ -49,9 +49,14 @@ class SignUp extends React.PureComponent {
 
         if(repeatedPassword!=password)
         errors.push({name:'repeatedPassword',msg:'Not matched with password'})
-        
-
-        console.log(errors);
+        this.setState({error: errors},()=>{
+            if(this.state.error.length==0)
+            {
+                const newUser={FName,LName,email,password,image};
+                addNewUser(newUser);
+                this.setState({FName:'',LName:'',email:'',password:'',repeatedPassword:'',image:''})
+            }
+        })
     }
     handleChange = (e) => {
         e.preventDefault();
@@ -66,33 +71,75 @@ class SignUp extends React.PureComponent {
             {value =>
                 (
             <div style={{ height: '400px' }}>
-                <Form className='SignUp_form' onSubmit={this.handleSubmit(value.state.users)}>
+                <Form className='SignUp_form' onSubmit={this.handleSubmit(value.state.users,value.addNewUser)}>
                     <Form.Text className="text-muted">
                         New Here? Create a free account!
                     </Form.Text>
                     <Form.Group>
                         <Form.Control type="text" name='FName' placeholder="First name" value={this.state.FName} onChange={this.handleChange} />
+                        <Form.Text style={{color: 'Red'}}>{
+                                  this.state.error.map(e=> {
+                                      if(e.name=='FName')
+                                      return e.msg
+                                  })
+                                    }
+                        </Form.Text>
                     </Form.Group>
 
                     <Form.Group>
                         <Form.Control type="text" name='LName' placeholder="Last name" value={this.state.LName} onChange={this.handleChange} />
+                        <Form.Text style={{color: 'Red'}}>{
+                                  this.state.error.map(e=> {
+                                      if(e.name=='LName')
+                                      return e.msg
+                                  })
+                                    }
+                        </Form.Text>
                     </Form.Group>
 
                     <Form.Group>
                         <Form.Control type="text" name='email' placeholder="Enter email" value={this.state.email} onChange={this.handleChange} />
+                        <Form.Text style={{color: 'Red'}}>{
+                                  this.state.error.map(e=> {
+                                      if(e.name=='email')
+                                      return e.msg
+                                  })
+                                    }
+                        </Form.Text>
                     </Form.Group>
 
                     <Form.Group >
                         <Form.Control type="password" name='password' placeholder="Password" value={this.state.password} onChange={this.handleChange} />
+                        <Form.Text style={{color: 'Red'}}>{
+                                  this.state.error.map(e=> {
+                                      if(e.name=='password')
+                                      return e.msg
+                                  })
+                                    }
+                        </Form.Text>
                     </Form.Group>
                     <Form.Group >
                         <Form.Control type="password" name='repeatedPassword' placeholder="Retype Password" value={this.state.repeatedPassword} onChange={this.handleChange} />
+                        <Form.Text style={{color: 'Red'}}>{
+                                  this.state.error.map(e=> {
+                                      if(e.name=='repeatedPassword')
+                                      return e.msg
+                                  })
+                                    }
+                        </Form.Text>
                     </Form.Group>
                     <Form.Group style={{ display: 'flex' }}>
                         <Form.Control type="file" name='image' placeholder="upload Image" className="ImageUpload" value={this.state.image} onChange={this.handleChange} />
-                        <Button variant="primary" type="submit" className='SignIn_form-btn'>
+                        <Form.Text style={{color: 'Red'}}>{
+                                  this.state.error.map(e=> {
+                                      if(e.name=='image')
+                                      return e.msg
+                                  })
+                                    }
+                        </Form.Text>
+                        {/* <Button variant="primary" type="submit" className='SignIn_form-btn'>
                             upload image
-                       </Button>
+                       </Button> */}
                     </Form.Group>
                     <Button variant="primary" type="submit" className='SignUp_form-btn'>
                         Sign up
