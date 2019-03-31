@@ -25,7 +25,7 @@ class NavBar extends React.PureComponent {
                             <Button variant="outline-success" className='navbarSearchBtn'>Search</Button>
                         </Form>
                         
-                        <Image src="/" roundedCircle style={{marginLeft:'290px'}}/>
+                        <Image src={value.state.loginedUser.Image} roundedCircle style={{marginLeft:'290px'}}/>
                         <div  style={{color:'#382110',marginLeft:'20px'}}>{value.state.loginedUser.firstName} {value.state.loginedUser.lastName}</div>
                         <Button  variant="primary" size="sm" className='navbarSearchBtn' style={{marginLeft:'100px'}} >
                             log out

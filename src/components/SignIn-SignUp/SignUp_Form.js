@@ -53,7 +53,7 @@ class SignUp extends React.PureComponent {
         this.setState({error: errors},()=>{
             if(this.state.error.length==0)
             {
-                const newUser={FName,LName,email,password,image};
+                const newUser={FName,LName,email,password,image,Admin: false};
                 addNewUser(newUser);
                 this.setState({FName:'',LName:'',email:'',password:'',repeatedPassword:'',image:''})
             }

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link,Switch } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import HomePage from './components/SignIn-SignUp/Home_Page';
+import UserHome from './components/User/Home';
 import Categories from './components/Categories/Categories';
 import AllBooks from './components/Books/AllBooks';
 import Book from './components/Books/Book';
@@ -41,6 +42,7 @@ class App extends React.PureComponent
             <Router>
                 <Switch>
                  <Route exact path="/" component={HomePage} />
+                 <Route exact path="/User/Home" component={UserHome}/>
                 <Route exact path="/AdminPage" component={AdminPage} />
                 <Route exact path="/Categories" component={Categories}/>
                 <Route exact path="/AllBooks" component={AllBooks}/>
