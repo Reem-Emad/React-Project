@@ -2,6 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link,Switch } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faEdit} from '@fortawesome/free-solid-svg-icons'
+import {faTrashAlt} from '@fortawesome/free-solid-svg-icons'
+
 import HomePage from './components/SignIn-SignUp/Home_Page';
 import UserHome from './components/User/Home';
 import Categories from './components/Categories/Categories';
@@ -12,7 +16,11 @@ import BookDetailes from './components/Books/BookDetails';
 import Users from './Users';
 import AdminPage from './components/Admin_Page/Admin_page';
 import AllAuthors from './components/Authors/AllAuthors';
+import EditCard from './components/Books/edit-card';
 
+
+library.add(faEdit)
+library.add(faTrashAlt)
 
 export const MyContext = React.createContext({ users:Users });
 class App extends React.PureComponent
@@ -42,6 +50,7 @@ class App extends React.PureComponent
             <Router>
                 <Switch>
                  <Route exact path="/" component={HomePage} />
+                 {/* <Route exact path="/" component={EditCard} /> */}
                  <Route exact path="/User/Home" component={UserHome}/>
                 <Route exact path="/AdminPage" component={AdminPage} />
                 <Route exact path="/Categories" component={Categories}/>
