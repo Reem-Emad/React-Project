@@ -3,7 +3,7 @@ import EditCard from './edit-card';
 import Books from '../../Books';
 import {Row} from 'react-bootstrap';
 
-class AdminList extends React.Component{
+class AdminBooksList extends React.Component{
     
     render(){
         return(
@@ -16,4 +16,4 @@ class AdminList extends React.Component{
     }
 }
 
-export default  AdminList;
+export default  AdminBooksList;

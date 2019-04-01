@@ -16,8 +16,8 @@ import BookDetailes from './components/Books/BookDetails';
 import Users from './Users';
 import AdminPage from './components/Admin_Page/Admin_page';
 import AllAuthors from './components/Authors/AllAuthors';
-import EditCard from './components/Books/edit-card';
-import AdminList from './components/Books/admin-list';
+import AdminBooksList from './components/Books/admin-list';
+import AdminAuthorsList from './components/Authors/admin-list';
 
 
 library.add(faEdit)
@@ -50,8 +50,9 @@ class App extends React.PureComponent
             <MyContext.Provider value={value}>
             <Router>
                 <Switch>
-                 {/* <Route exact path="/" component={HomePage} /> */}
-                 <Route exact path="/" component={AdminList} />
+                 <Route exact path="/" component={HomePage} />
+                 <Route exact path="/Admin/Books" component={AdminBooksList} />
+                 <Route exact path="/Admin/Authors" component={AdminAuthorsList} />
                  <Route exact path="/User/Home" component={UserHome}/>
                 <Route exact path="/AdminPage" component={AdminPage} />
                 <Route exact path="/Categories" component={Categories}/>
