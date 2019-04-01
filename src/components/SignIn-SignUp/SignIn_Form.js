@@ -26,13 +26,13 @@ class SignIn extends React.PureComponent {
             if (user.password == this.state.enteredPassword && user.Admin==false) {
                 this.setState({ enteredDataValidation: 'vaild user' })
                 addLoginedUser(user);
-                // this.props.history.push('/navbar');
+                this.props.history.push('/user/home');
             }
             else if(user.password == this.state.enteredPassword && user.Admin==true)
             {
                 this.setState({ enteredDataValidation: 'vaild admin' })
                 addLoginedUser(user);
-                // this.props.history.push('/navbar');
+                this.props.history.push('/user/home');
             }
             else
                 this.setState({ enteredDataValidation: 'incorrect password' })

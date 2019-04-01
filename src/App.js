@@ -10,6 +10,7 @@ import Book from './components/Books/Book';
 import AuthorDetails from './components/Authors/Author';
 import BookDetailes from './components/Books/BookDetails';
 import Users from './Users';
+import Books from './Books';
 import AdminPage from './components/Admin_Page/Admin_page';
 import AllAuthors from './components/Authors/AllAuthors';
 
@@ -19,6 +20,7 @@ class App extends React.PureComponent
 {
     state={
        users:Users,        
+       Books:Books,
        loginedUser:{}
     }
     addNewUser=(newUser)=>{
@@ -42,7 +44,7 @@ class App extends React.PureComponent
             <Router>
                 <Switch>
                  <Route exact path="/" component={HomePage} />
-                 <Route exact path="/User/Home" component={UserHome}/>
+                 <Route exact path="/user/Home" component={UserHome}/>
                 <Route exact path="/AdminPage" component={AdminPage} />
                 <Route exact path="/Categories" component={Categories}/>
                 <Route exact path="/AllBooks" component={AllBooks}/>
