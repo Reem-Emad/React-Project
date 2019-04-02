@@ -47,7 +47,7 @@ class App extends React.PureComponent
         this.setState({loginedUser});
     }
     updateAuthors=(updatedAuthors)=>{
-        this.setState({Authors:updatedAuthors});
+        this.setState({Authors: updatedAuthors},()=>{console.log(this.state.Authors)});
     }
     render()
     {

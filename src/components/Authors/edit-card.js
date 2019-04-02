@@ -24,17 +24,17 @@ class EditCard extends React.Component {
     handleShow() {
         this.setState({ show: true });
     }
-    handleDelete=(id,Authors,updateAuthors)=>{
-      
+    handleDelete=(id,Authors,updateAuthors)=>(e)=>{
+            //  debugger;
             Authors.forEach((a,i)=>{
                   if(a.id === id){
                       Authors.splice(i,1);
                       updateAuthors(Authors);
-                      this.setState({ smShow: true });
-                      
+            this.setState({ smShow: true });
+            
                   }
             });
-             
+            
             
     }
         
