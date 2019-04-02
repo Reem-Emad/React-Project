@@ -42,7 +42,7 @@ class EditCard extends React.Component {
                     </Card>
                 </Col>
 
-                <Modal show={this.state.show} onHide={this.handleClose}>
+                <Modal key={Math.random()} show={this.state.show} onHide={this.handleClose}>
                     <Modal.Header>
                         <Modal.Title>Edit Book</Modal.Title>
                     </Modal.Header>
@@ -81,7 +81,7 @@ class EditCard extends React.Component {
                        </Button>
                     </Modal.Footer>
                 </Modal>
-                <Modal
+                <Modal key={Math.random()}
                     size="sm"
                     show={this.state.smShow}
                     onHide={smClose}

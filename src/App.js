@@ -14,10 +14,18 @@ import Book from './components/Books/Book';
 import AuthorDetails from './components/Authors/Author';
 import BookDetailes from './components/Books/BookDetails';
 import Users from './Users';
+
 import AllAuthors from './components/Authors/AllAuthors';
 import EditCard from './components/Books/edit-card';
 import AdminList from './components/Books/admin-list';
 import CategoriesAdminList from './components/Categories/CategoriesAdminsList';
+
+import Books from './Books';
+
+import AllAuthors from './components/Authors/AllAuthors';
+import AdminBooksList from './components/Books/admin-list';
+import AdminAuthorsList from './components/Authors/admin-list';
+
 
 
 library.add(faEdit)
@@ -28,6 +36,7 @@ class App extends React.PureComponent
 {
     state={
        users:Users,        
+       Books:Books,
        loginedUser:{}
     }
     addNewUser=(newUser)=>{
@@ -50,9 +59,16 @@ class App extends React.PureComponent
             <MyContext.Provider value={value}>
             <Router>
                 <Switch>
+
                  {/* <Route exact path="/" component={HomePage} /> */}
                  <Route exact path="/" component={AdminList} />
                  <Route exact path="/User/Home" component={UserHome}/>
+
+                 <Route exact path="/" component={HomePage} />
+                 <Route exact path="/user/Home" component={UserHome}/>
+                 <Route exact path="/Admin/Books" component={AdminBooksList} />
+                 <Route exact path="/Admin/Authors" component={AdminAuthorsList} />
+
                 <Route exact path="/Categories" component={Categories}/>
                 <Route exact path="/AllBooks" component={AllBooks}/>
                 <Route exact path="/Book" component={Book}/>

@@ -9,7 +9,8 @@
 }
 .BookCard_img
 {
-    width:20% !important;
+    width:10% !important;
+    height:100% !important;
 }
 .BookCars_dropdown--btn
 {
