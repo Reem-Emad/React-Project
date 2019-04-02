@@ -144,4 +144,21 @@ export default [
         
     
     },
+    {
+        "id": "11",
+        "Name": "Micol Ostow",
+        "Image":"https://images.gr-assets.com/authors/1405472736p5/897744.jpg",
+        "NumberOfBooks": "30",
+        "NumberOfFriends": "25",
+        "Born":"in Portland, Maine, The United States ",
+        "Website":"//www.micolostow.com/",
+        "Genre":"Horror, Mystery, Literature & Fiction",
+        "Influences":"Robert Bloch, Ray Bradbury, Charles Dickens, Shirley Jackson",
+        "Member Since":"August 2010",
+        "Dscription":"Micol Ostow has been writing professionally since 2004, and in that time has written and/or ghostwritten over 40 published works for young readers. She started her reign of terror with Egmont with her novel FAMILY, which Elizabeth Burns named a favorite of 2012 on her School Library Journal-syndicated blog, A Chair, a Fireplace, a Tea Cozy. Micol's graphic novel, SO PUNK ROCK (and Other Ways to Disappoint Your Mother), was named a 2009 Booklist Top Ten Arts Books for Youth Selection, a Booklist Top Ten Religion Books for Youth Selection, and a Sydney Taylor Notable Book for Teens. She received her MFA in Writing for Children and Young Adults from the Vermont College of Fine Arts."
+        
+    
+    }
 ]
+
+
