@@ -2,11 +2,13 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link,Switch } from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
+
+///font awesome
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faEdit} from '@fortawesome/free-solid-svg-icons';
 import {faTrashAlt} from '@fortawesome/free-solid-svg-icons';
 import {faPlus} from '@fortawesome/free-solid-svg-icons';
-
+/////components
 import HomePage from './components/SignIn-SignUp/Home_Page';
 import UserHome from './components/User/Home';
 import Categories from './components/Categories/Categories';
@@ -14,7 +16,7 @@ import BooksList from './components/Books/List';
 import AuthorDetails from './components/Authors/Authors';
 import BookDetailes from './components/Books/BookDetails';
 import Users from './Users';
-import AllAuthors from './components/Authors/AllAuthors';
+import AllAuthors from './components/Authors/List';
 import CategoriesAdminList from './components/Categories/CategoriesAdminsList';
 import Books from './Books';
 
@@ -74,7 +76,7 @@ class App extends React.PureComponent
                  <Route exact path="/admin/authors" component={AdminAuthorsList} />
                  <Route exact path="/admin/categories" component={AdminCategoriesList} />
                 <Route exact path="/bookDetailes/:id" component={BookDetailes}/>    
-                <Route exact path="/AuthorDetails/:id" component={AuthorDetails}/>  
+                <Route exact path="/AuthorDetailes/:id" component={AuthorDetails}/>  
                  </Switch>                
             </Router>
             </MyContext.Provider>
