@@ -15,28 +15,17 @@ import Book from './components/Books/Book';
 import AuthorDetails from './components/Authors/Authors';
 import BookDetailes from './components/Books/BookDetails';
 import Users from './Users';
-
 import AllAuthors from './components/Authors/AllAuthors';
-import EditCard from './components/Books/edit-card';
-import AdminList from './components/Books/admin-list';
 import CategoriesAdminList from './components/Categories/CategoriesAdminsList';
-
 import Books from './Books';
-import AllAuthors from './components/Authors/AllAuthors';
 import AdminBooksList from './components/Books/admin-list';
 import AdminAuthorsList from './components/Authors/admin-list';
 import Authors from './Authors';
 
 
-<<<<<<< HEAD
 library.add(faEdit);
 library.add(faTrashAlt);
 library.add(faPlus);
-=======
-
-library.add(faEdit)
-library.add(faTrashAlt)
->>>>>>> 069f18ef5ab1939cb2b52ea52ab493df776f8de7
 
 export const MyContext = React.createContext({ users:Users });
 class App extends React.PureComponent
@@ -72,15 +61,12 @@ class App extends React.PureComponent
             <Router>
                 <Switch>
 
-                 {/* <Route exact path="/" component={HomePage} /> */}
-                 <Route exact path="/" component={AdminList} />
-                 <Route exact path="/User/Home" component={UserHome}/>
+               
 
                  <Route exact path="/" component={HomePage} />
                  <Route exact path="/user/Home" component={UserHome}/>
                  <Route exact path="/Admin/Books" component={AdminBooksList} />
                  <Route exact path="/Admin/Authors" component={AdminAuthorsList} />
-
                 <Route exact path="/Categories" component={Categories}/>
                 <Route exact path="/AllBooks" component={AllBooks}/>
                 <Route exact path="/Book" component={Book}/>
