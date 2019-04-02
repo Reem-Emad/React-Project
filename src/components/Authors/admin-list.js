@@ -34,7 +34,7 @@ class AdminAuthorsList extends React.Component{
                         <Card.Img style={{ height: '20rem' }} variant="top" src="https://memegene.net/sites/default/files/wallpaper/customer-clipart/413485/customer-clipart-end-user-413485-4676069.png" />
                         <Card.Body>
                             <Card.Title>Add Author
-                                <FontAwesomeIcon icon="plus"/>
+                                <FontAwesomeIcon className="float-right" icon="plus"/>
                             </Card.Title>
                         </Card.Body>
                     </Card>

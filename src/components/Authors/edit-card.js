@@ -24,19 +24,7 @@ class EditCard extends React.Component {
     handleShow() {
         this.setState({ show: true });
     }
-    handleDelete=(id,Authors,updateAuthors)=>{
-      
-            Authors.forEach((a,i)=>{
-                  if(a.id === id){
-                      Authors.splice(i,1);
-                      updateAuthors(Authors);
-                      this.setState({ smShow: true });
-                      
-                  }
-            });
-             
-            
-    }
+   
         
     
     render() {
@@ -54,7 +42,7 @@ class EditCard extends React.Component {
                             <Card.Title>{this.props.name}
                                 <Card.Text className="float-right">
                                     <FontAwesomeIcon className="mr-3" icon="edit" onClick={this.handleShow} />
-                                    <FontAwesomeIcon icon="trash-alt" onClick={this.handleDelete(this.props.id,value.state.Authors,value.updateAuthors)} />
+                                    <FontAwesomeIcon icon="trash-alt" onClick={()=>this.setState({ smShow: true })} />
                                 </Card.Text>
                             </Card.Title>
 
