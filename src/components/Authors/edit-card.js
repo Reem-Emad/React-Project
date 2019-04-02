@@ -23,6 +23,10 @@ class EditCard extends React.Component {
     handleShow() {
         this.setState({ show: true });
     }
+    handleClick=()=>(e)=>
+    {
+     this.setState({ smShow: true })
+    }
  
     render() {
         let smClose = () => this.setState({ smShow: false });
@@ -35,7 +39,7 @@ class EditCard extends React.Component {
                             <Card.Title>{this.props.name}
                                 <Card.Text className="float-right">
                                     <FontAwesomeIcon className="mr-3" icon="edit" onClick={this.handleShow} />
-                                    <FontAwesomeIcon icon="trash-alt" onClick={() => this.setState({ smShow: true }) }  />
+                                    <FontAwesomeIcon icon="trash-alt" onClick={this.handleClick() }  />
                                 </Card.Text>
                             </Card.Title>
 
