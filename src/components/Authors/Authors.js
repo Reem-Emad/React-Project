@@ -1,7 +1,7 @@
 import React from 'react';
 import { Dropdown, Row, Container, Col, Card, Button, ButtonGroup, ListGroup,ListGroupItem } from 'react-bootstrap';
 import author from '../../Authors';
-import './Author.css';
+import './Style.css';
 class AuthorDetails extends React.Component {
     render() {
         const id = this.props.match.params.id;

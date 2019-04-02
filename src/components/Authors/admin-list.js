@@ -28,7 +28,7 @@ class AdminAuthorsList extends React.Component{
         return(
             <MyContext.Consumer>
                 {value=>(
-            <Row>
+            <Row className="no-gutters">
                   <Col key="0" className="m-3">
                     <Card style={{ width: '18rem' }}onClick={this.handleShow}>
                         <Card.Img style={{ height: '20rem' }} variant="top" src="https://memegene.net/sites/default/files/wallpaper/customer-clipart/413485/customer-clipart-end-user-413485-4676069.png" />
