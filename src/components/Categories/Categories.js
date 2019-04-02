@@ -2,12 +2,9 @@ import React from 'react';
 import { Dropdown, Row, Container, Col, Card, Button } from 'react-bootstrap';
 import './Categories.css';
 import categories from '../../Categories';
-<<<<<<< HEAD
-import AllBooks from '../Books/AllBooks';
+// import AllBooks from '../Books/AllBooks';
 
-=======
 import BooksList from '../Books/List';
->>>>>>> 2db5b40323293080c024f658907ba471c8a92ffc
 class Categories extends React.Component {
     state = {
         selectedCategory: '',

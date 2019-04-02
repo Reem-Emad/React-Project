@@ -20,7 +20,7 @@ import Books from './Books';
 
 
 import AdminBooksList from './components/Books/admin-list';
-import AdminAuthorsList from './components/Authors/admin-list';
+import AdminAuthorsList from './components/Authors/Admin-List';
 import AdminCategoriesList from './components/Categories/CategoriesAdminsList';
 import Authors from './Authors';
 
