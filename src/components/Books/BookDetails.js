@@ -2,7 +2,7 @@ import React from 'react';
 import books from '../../Books';
 import { Dropdown, Row, Container, Col, Card, Button ,ButtonGroup ,Form} from 'react-bootstrap';
 // import Book from './Book';
-import './Book.css';
+import './Style.css';
 class BookDetails extends React.Component {
     render() {
         const id = this.props.match.params.id;

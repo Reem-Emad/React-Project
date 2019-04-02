@@ -1,5 +1,5 @@
 import React from 'react';
-import EditCard from './edit-card';
+import EditCard from './Edit-Card';
 import Authors from '../../Authors';
 import {Row,Col,Card,Form,Button,Modal} from 'react-bootstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';

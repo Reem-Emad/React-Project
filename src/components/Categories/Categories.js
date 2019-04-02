@@ -1,6 +1,6 @@
 import React from 'react';
 import { Dropdown, Row, Container, Col, Card, Button } from 'react-bootstrap';
-import './Categories.css';
+import './Style.css';
 import categories from '../../Categories';
 // import AllBooks from '../Books/AllBooks';
 

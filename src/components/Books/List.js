@@ -1,6 +1,6 @@
 import React from 'react';
 import {Row} from 'react-bootstrap';
-import BasicCard from './basic-card'
+import BasicCard from './Basic-Card'
 import {MyContext} from '../../App';
 
 

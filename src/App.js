@@ -13,18 +13,18 @@ import HomePage from './components/SignIn-SignUp/Home_Page';
 import UserHome from './components/User/Home';
 import Categories from './components/Categories/Categories';
 import BooksList from './components/Books/List';
-import AuthorDetails from './components/Authors/Authors';
+import AuthorDetails from './components/Authors/Details';
 import BookDetailes from './components/Books/BookDetails';
-import Users from './Users';
 import AllAuthors from './components/Authors/List';
 import CategoriesAdminList from './components/Categories/CategoriesAdminsList';
-import Books from './Books';
 
 
-import AdminBooksList from './components/Books/admin-list';
+import AdminBooksList from './components/Books/Admin-List';
 import AdminAuthorsList from './components/Authors/Admin-List';
 import AdminCategoriesList from './components/Categories/CategoriesAdminsList';
 import Authors from './Authors';
+import Books from './Books';
+import Users from './Users';
 
 
 library.add(faEdit);
