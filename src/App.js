@@ -25,6 +25,7 @@ import AdminCategoriesList from './components/Categories/Admin-List';
 import Authors from './Authors';
 import Books from './Books';
 import Users from './Users';
+import { SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS } from 'constants';
 
 
 library.add(faEdit);
@@ -59,13 +60,15 @@ class App extends React.PureComponent {
 
         return (
             <>
-            
+          
                 <MyContext.Provider value={value}>
                     <Router>
                        
                             <Route exact path="/" component={HomePage} />
                             {
-                                this.state.loginedUser=={} &&
+                               Object.keys(this.state.loginedUser).length == 0 ?
+                              <Route exact path="/" component={HomePage} />
+                              :
                                 
                             <Switch>
                             <Route exact path="/user/home" component={UserHome} />
