@@ -14,10 +14,10 @@ import Book from './components/Books/Book';
 import AuthorDetails from './components/Authors/Author';
 import BookDetailes from './components/Books/BookDetails';
 import Users from './Users';
-import AdminPage from './components/Admin_Page/Admin_page';
 import AllAuthors from './components/Authors/AllAuthors';
 import EditCard from './components/Books/edit-card';
 import AdminList from './components/Books/admin-list';
+import CategoriesAdminList from './components/Categories/CategoriesAdminsList';
 
 
 library.add(faEdit)
@@ -53,13 +53,14 @@ class App extends React.PureComponent
                  {/* <Route exact path="/" component={HomePage} /> */}
                  <Route exact path="/" component={AdminList} />
                  <Route exact path="/User/Home" component={UserHome}/>
-                <Route exact path="/AdminPage" component={AdminPage} />
                 <Route exact path="/Categories" component={Categories}/>
                 <Route exact path="/AllBooks" component={AllBooks}/>
                 <Route exact path="/Book" component={Book}/>
                 <Route exact path="/bookDetailes/:id" component={BookDetailes}/>    
                 <Route exact path="/AuthorDetails/:id" component={AuthorDetails}/>  
-                <Route exact path="/AllAuthors" component={AllAuthors}/>  
+                <Route exact path="/AllAuthors" component={AllAuthors}/> 
+                <Route exact path="/CategoriesAdminList" component={CategoriesAdminList}/> 
+                 
 
                  </Switch>                
             </Router>
