@@ -10,8 +10,7 @@ import {faPlus} from '@fortawesome/free-solid-svg-icons';
 import HomePage from './components/SignIn-SignUp/Home_Page';
 import UserHome from './components/User/Home';
 import Categories from './components/Categories/Categories';
-import AllBooks from './components/Books/AllBooks';
-import Book from './components/Books/Book';
+import BooksList from './components/Books/List';
 import AuthorDetails from './components/Authors/Authors';
 import BookDetailes from './components/Books/BookDetails';
 import Users from './Users';
@@ -68,7 +67,7 @@ class App extends React.PureComponent
                  <Route exact path="/" component={HomePage} />
                  <Route exact path="/user/home" component={UserHome}/>
                  <Route exact path="/admin/home" component={UserHome}/>
-                <Route exact path="/user/books" component={AllBooks}/>
+                <Route exact path="/user/books" component={BooksList}/>
                 <Route exact path="/user/categories" component={Categories}/>
                 <Route exact path="/user/authors" component={AllAuthors}/>  
                  <Route exact path="/admin/books" component={AdminBooksList} />
