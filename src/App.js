@@ -18,6 +18,8 @@ import Users from './Users';
 import AllAuthors from './components/Authors/AllAuthors';
 import CategoriesAdminList from './components/Categories/CategoriesAdminsList';
 import Books from './Books';
+
+
 import AdminBooksList from './components/Books/admin-list';
 import AdminAuthorsList from './components/Authors/admin-list';
 import Authors from './Authors';
@@ -61,21 +63,17 @@ class App extends React.PureComponent
             <Router>
                 <Switch>
 
-               
-
+              
                  <Route exact path="/" component={HomePage} />
-                 <Route exact path="/user/Home" component={UserHome}/>
-                 <Route exact path="/Admin/Books" component={AdminBooksList} />
-                 <Route exact path="/Admin/Authors" component={AdminAuthorsList} />
-                <Route exact path="/Categories" component={Categories}/>
-                <Route exact path="/AllBooks" component={AllBooks}/>
-                <Route exact path="/Book" component={Book}/>
+                 <Route exact path="/user/home" component={UserHome}/>
+                 <Route exact path="/admin/home" component={UserHome}/>
+                <Route exact path="/user/books" component={AllBooks}/>
+                <Route exact path="/user/categories" component={Categories}/>
+                <Route exact path="/user/authors" component={AllAuthors}/>  
+                 <Route exact path="/admin/books" component={AdminBooksList} />
+                 <Route exact path="/admin/authors" component={AdminAuthorsList} />
                 <Route exact path="/bookDetailes/:id" component={BookDetailes}/>    
                 <Route exact path="/AuthorDetails/:id" component={AuthorDetails}/>  
-                <Route exact path="/AllAuthors" component={AllAuthors}/> 
-                <Route exact path="/CategoriesAdminList" component={CategoriesAdminList}/> 
-                 
-
                  </Switch>                
             </Router>
             </MyContext.Provider>

@@ -8,6 +8,16 @@ class NavBar extends React.PureComponent {
         this.props.history.push('/');
       
     }
+    handleClick=(loginedUser)=>(e)=>{
+        let userState;
+        if(loginedUser.Admin==true)
+        userState='admin';
+        else
+        userState='user';
+         
+        this.props.history.push(`/${userState}/${e.target.name}`);
+
+    }
     render() {
         return (
             <MyContext.Consumer>
@@ -20,10 +30,10 @@ class NavBar extends React.PureComponent {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto" className='navbarLinks'>
-                            <Nav.Link >Home</Nav.Link>
-                            <Nav.Link >Categories</Nav.Link>
-                            <Nav.Link >Books</Nav.Link>
-                            <Nav.Link >Authors</Nav.Link>
+                            <Nav.Link name='home' onClick={this.handleClick(value.state.loginedUser)} >Home</Nav.Link>
+                            <Nav.Link name='categories' onClick={this.handleClick(value.state.loginedUser)}>Categories</Nav.Link>
+                            <Nav.Link name='books' onClick={this.handleClick(value.state.loginedUser)}>Books</Nav.Link>
+                            <Nav.Link name='authors' onClick={this.handleClick(value.state.loginedUser)}>Authors</Nav.Link>
                         </Nav>
                         <Form inline className=' ml-5'>
                             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
