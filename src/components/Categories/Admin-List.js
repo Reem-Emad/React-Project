@@ -12,7 +12,7 @@ class CategoriesAdminList extends React.Component{
          return(
                 <>
           <Navbar></Navbar>
-            <Row >
+            <Row className="no-gutters">
                  {CategirosData.map(b=><EditCard key={b.Id}
                  id={b.Id}
                  name={b.Name}   />)}
