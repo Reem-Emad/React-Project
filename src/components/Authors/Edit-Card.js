@@ -35,7 +35,7 @@ class EditCard extends React.Component {
                     value=>(
                 
             <>
-                <Col key={this.props.id} className="m-3">
+                <Col  className="m-3">
                     <Card style={{ width: '18rem' }}>
                         <Card.Img variant="top" src={this.props.image} style={{ height: '20rem' }} />
                         <Card.Body>

@@ -3,6 +3,7 @@ import SimpleSchema from 'simpl-schema';
 import { MyContext } from '../../App';
 import { Form } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
+import './Style.css';
 
 class SignUp extends React.PureComponent {
     state = {

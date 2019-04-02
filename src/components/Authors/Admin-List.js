@@ -41,7 +41,7 @@ class AdminAuthorsList extends React.Component {
                                     </Card.Body>
                                 </Card>
                             </Col>
-                            {value.state.Authors.map(a => <EditCard id={a.id} image={a.Image} name={a.Name} description={a.Dscription}
+                            {value.state.Authors.map(a => <EditCard key={a.id} id={a.id} image={a.Image} name={a.Name} description={a.Dscription}
                                 NumberOfBooks={a.NumberOfBooks} NumberOfFriends={a.NumberOfFriends} born={a.Born} website={a.Website}
                                 influences={a.Influences} member={a["Member Since"]} />)}
 

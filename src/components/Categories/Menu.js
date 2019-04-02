@@ -1,7 +1,8 @@
 import React from 'react';
+import categories from '../../Categories';
+import Navbar from '../Shared/Navbar';
 import { Dropdown, Row, Container, Col, Card, Button } from 'react-bootstrap';
 import './Style.css';
-import categories from '../../Categories';
 // import AllBooks from '../Books/AllBooks';
 
 import BooksList from '../Books/List';
@@ -18,7 +19,7 @@ class Categories extends React.Component {
         let eventKey = 1;
         return (
             <>
-
+              <Navbar></Navbar>
                 <Container className="Container">
                 <Row>
                     

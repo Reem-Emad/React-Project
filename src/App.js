@@ -59,10 +59,15 @@ class App extends React.PureComponent {
 
         return (
             <>
+            
                 <MyContext.Provider value={value}>
                     <Router>
-                        <Switch>
+                       
                             <Route exact path="/" component={HomePage} />
+                            {
+                                this.state.loginedUser=={} &&
+                                
+                            <Switch>
                             <Route exact path="/user/home" component={UserHome} />
                             <Route exact path="/admin/home" component={UserHome} />
                             <Route exact path="/user/books" component={BooksList} />
@@ -72,8 +77,10 @@ class App extends React.PureComponent {
                             <Route exact path="/admin/authors" component={AdminAuthorsList} />
                             <Route exact path="/admin/categories" component={AdminCategoriesList} />
                             <Route exact path="/bookDetailes/:id" component={BookDetailes} />
-                            <Route exact path="/AuthorDetailes/:id" component={AuthorDetails} />
-                        </Switch>
+                            <Route exact path="/AuthorDetailes/:id" component={AuthorDetails} />   
+                           </Switch>
+                            }
+                            
                     </Router>
                 </MyContext.Provider>
             </>

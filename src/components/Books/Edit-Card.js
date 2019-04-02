@@ -27,7 +27,7 @@ class EditCard extends React.Component {
         let smClose = () => this.setState({ smShow: false });
         return (
             <>
-                <Col key={this.props.id} className="m-3">
+                <Col  className="m-3">
                     <Card style={{ width: '18rem' }}>
                         <Card.Img variant="top" src={this.props.cover} style={{ height: '20rem' }} />
                         <Card.Body>
@@ -42,7 +42,7 @@ class EditCard extends React.Component {
                     </Card>
                 </Col>
 
-                <Modal key={Math.random()} show={this.state.show} onHide={this.handleClose}>
+                <Modal  show={this.state.show} onHide={this.handleClose}>
                     <Modal.Header>
                         <Modal.Title>Edit Book</Modal.Title>
                     </Modal.Header>
@@ -81,12 +81,11 @@ class EditCard extends React.Component {
                        </Button>
                     </Modal.Footer>
                 </Modal>
-                <Modal key={Math.random()}
+                <Modal
                     size="sm"
                     show={this.state.smShow}
                     onHide={smClose}
-                    aria-labelledby="example-modal-sizes-title-sm"
-                >
+                    aria-labelledby="example-modal-sizes-title-sm">
                     <Modal.Header closeButton>
                         <Modal.Title id="example-modal-sizes-title-sm">
                             Delete

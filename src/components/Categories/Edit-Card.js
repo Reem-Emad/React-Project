@@ -34,7 +34,7 @@ class EditCard extends React.Component {
         let smClose = () => this.setState({ smShow: false });
         return (
             <>
-                <Col key={this.props.id} className="m-3">
+                <Col className="m-3">
                     <Card style={{ width: '18rem' }}>
                         <Card.Body>
                             <Card.Title>{this.props.name}

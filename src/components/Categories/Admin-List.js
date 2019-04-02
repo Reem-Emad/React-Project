@@ -1,8 +1,9 @@
 import React from 'react';
-import EditCard from './edit-card';
+import EditCard from './Edit-Card';
 import Books from '../../Books';
-import {Row} from 'react-bootstrap';
 import CategirosData from '../../Categories';
+import Navbar from '../Shared/Navbar';
+import {Row} from 'react-bootstrap';
 import { MyContext } from '../../App';
 
 class CategoriesAdminList extends React.Component{
@@ -10,11 +11,11 @@ class CategoriesAdminList extends React.Component{
     render(){
          return(
                 <>
-
-            <Row key={this.props.Id}>
-                 {CategirosData.map(b=><EditCard 
+          <Navbar></Navbar>
+            <Row >
+                 {CategirosData.map(b=><EditCard key={b.Id}
                  id={b.Id}
-                 name={b.Name}  key={CategirosData.Id} />)}
+                 name={b.Name}   />)}
             </Row>
             </>
                     )

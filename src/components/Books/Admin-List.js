@@ -1,6 +1,7 @@
 import React from 'react';
 import EditCard from './Edit-Card';
 import Books from '../../Books';
+import Navbar from '../Shared/Navbar';
 import { Row, Col, Card, Form, Modal,Button } from 'react-bootstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
@@ -25,6 +26,8 @@ class AdminBooksList extends React.Component {
 
     render() {
         return (
+            <>
+            <Navbar></Navbar>
             <Row className="no-gutters">
                 <Col key="0" className="m-3">
                     <Card style={{ width: '18rem' }} onClick={this.handleShow}>
@@ -37,7 +40,7 @@ class AdminBooksList extends React.Component {
                     </Card>
                 </Col>
 
-                {Books.map(b => <EditCard id={b.id} cover={b.cover} title={b.title} description={b.description}
+                {Books.map(b => <EditCard key={b.id} id={b.id} cover={b.cover} title={b.title} description={b.description}
                     author={b.author} category={b.category} pages={b.pages} />)}
 
                 <Modal key={Math.random()} show={this.state.show} onHide={this.handleClose}>
@@ -80,7 +83,7 @@ class AdminBooksList extends React.Component {
                     </Modal.Footer>
                 </Modal>
             </Row>
-
+           </>
 
         );
     }

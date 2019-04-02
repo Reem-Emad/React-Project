@@ -1,7 +1,8 @@
 import React from 'react';
-import { Dropdown, Row, Container, Col, Card, Button, ButtonGroup, ListGroup,ListGroupItem } from 'react-bootstrap';
 import author from '../../Authors';
+import Navbar from '../Shared/Navbar';
 import './Style.css';
+import { Dropdown, Row, Container, Col, Card, Button, ButtonGroup, ListGroup,ListGroupItem } from 'react-bootstrap';
 class AuthorDetails extends React.Component {
     render() {
         const id = this.props.match.params.id;
@@ -12,6 +13,7 @@ class AuthorDetails extends React.Component {
         console.log(Author);
         return (
             <>
+            <Navbar></Navbar>
                 <Container className="detailedCard">
                     <Row>
                         <Col sm="1"></Col>

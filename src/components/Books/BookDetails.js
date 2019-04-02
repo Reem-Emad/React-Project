@@ -1,8 +1,9 @@
 import React from 'react';
 import books from '../../Books';
-import { Dropdown, Row, Container, Col, Card, Button ,ButtonGroup ,Form} from 'react-bootstrap';
-// import Book from './Book';
+import Navbar from '../Shared/Navbar';
 import './Style.css';
+import { Dropdown, Row, Container, Col, Card, Button ,ButtonGroup ,Form} from 'react-bootstrap';
+
 class BookDetails extends React.Component {
     render() {
         const id = this.props.match.params.id;
@@ -14,6 +15,7 @@ class BookDetails extends React.Component {
 
         return (
             <>
+               <Navbar></Navbar>
                 <Container className="detailedCard">
                     <Row>
                         <Col md="1"></Col>
