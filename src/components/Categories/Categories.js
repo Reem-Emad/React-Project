@@ -5,6 +5,7 @@ import categories from '../../Categories';
 // import AllBooks from '../Books/AllBooks';
 
 import BooksList from '../Books/List';
+import ListByCategory from '../Books/ListByCategory';
 class Categories extends React.Component {
     state = {
         selectedCategory: '',
@@ -37,7 +38,7 @@ class Categories extends React.Component {
                             {this.state.selectedCategory}
                             <br></br>
                             {
-                                <BooksList selectedCategory={this.state.selectedCategory} />
+                                <ListByCategory selectedCategory={this.state.selectedCategory} />
                             }
 
 
