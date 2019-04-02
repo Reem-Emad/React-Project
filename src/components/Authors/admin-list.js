@@ -2,6 +2,8 @@ import React from 'react';
 import EditCard from './edit-card';
 import Authors from '../../Authors';
 import {Row,Col,Card,Form,Button,Modal} from 'react-bootstrap';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {MyContext} from '../../App';
 
 class AdminAuthorsList extends React.Component{
     constructor(props, context) {
@@ -24,17 +26,20 @@ class AdminAuthorsList extends React.Component{
     
     render(){
         return(
+            <MyContext.Consumer>
+                {value=>(
             <Row>
                   <Col key="0" className="m-3">
                     <Card style={{ width: '18rem' }}onClick={this.handleShow}>
                         <Card.Img style={{ height: '20rem' }} variant="top" src="https://memegene.net/sites/default/files/wallpaper/customer-clipart/413485/customer-clipart-end-user-413485-4676069.png" />
                         <Card.Body>
                             <Card.Title>Add Author
+                                <FontAwesomeIcon icon="plus"/>
                             </Card.Title>
                         </Card.Body>
                     </Card>
                 </Col>
-                 {Authors.map(a=><EditCard id={a.id} image={a.Image} name={a.Name} description={a.Dscription}
+                 {value.state.Authors.map(a=><EditCard id={a.id} image={a.Image} name={a.Name} description={a.Dscription}
                  NumberOfBooks={a.NumberOfBooks} NumberOfFriends={a.NumberOfFriends} born={a.Born} website={a.Website}
                  influences={a.Influences} member={a["Member Since"]} />)}
 
@@ -91,6 +96,8 @@ class AdminAuthorsList extends React.Component{
                     </Modal.Footer>
                 </Modal>
             </Row>
+            )}
+            </MyContext.Consumer>
             
         );
     }

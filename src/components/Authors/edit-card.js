@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Col, Modal, Button, Form } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { MyContext } from '../../App';
 
 
 class EditCard extends React.Component {
@@ -23,14 +24,28 @@ class EditCard extends React.Component {
     handleShow() {
         this.setState({ show: true });
     }
-    handleClick=()=>(e)=>
-    {
-     this.setState({ smShow: true })
+    handleDelete=(id,Authors,updateAuthors)=>{
+      
+            Authors.forEach((a,i)=>{
+                  if(a.id === id){
+                      Authors.splice(i,1);
+                      updateAuthors(Authors);
+                      this.setState({ smShow: true });
+                      
+                  }
+            });
+             
+            
     }
- 
+        
+    
     render() {
         let smClose = () => this.setState({ smShow: false });
         return (
+            <MyContext.Consumer>
+                {
+                    value=>(
+                
             <>
                 <Col key={this.props.id} className="m-3">
                     <Card style={{ width: '18rem' }}>
@@ -39,7 +54,7 @@ class EditCard extends React.Component {
                             <Card.Title>{this.props.name}
                                 <Card.Text className="float-right">
                                     <FontAwesomeIcon className="mr-3" icon="edit" onClick={this.handleShow} />
-                                    <FontAwesomeIcon icon="trash-alt" onClick={this.handleClick() }  />
+                                    <FontAwesomeIcon icon="trash-alt" onClick={this.handleDelete(this.props.id,value.state.Authors,value.updateAuthors)} />
                                 </Card.Text>
                             </Card.Title>
 
@@ -115,7 +130,10 @@ class EditCard extends React.Component {
           </Modal.Body>
                 </Modal>
             </>
-
+             )
+            }
+    </MyContext.Consumer>
+                   
         );
     }
 
