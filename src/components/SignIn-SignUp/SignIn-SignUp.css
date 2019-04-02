@@ -1,0 +1,39 @@
+
+.HomePage
+{
+  background-image: url("../../images/masthead_background.jpg");
+}
+.SignIn_Form
+{
+  position: absolute;
+  right:20px;
+  
+}
+.SignIn_form-btn
+{
+  background-color: #58371F !important;
+  border-color: #58371F !important;
+}
+.SignUp_form
+{
+  width:35%;
+  position: relative;
+  left:825px;
+  margin:25px;
+
+}
+.SignUp_form-btn
+{
+  background-color:  #FFD56D !important;
+  border-color:  #FFD56D !important;
+ 
+}
+.ImageUpload
+{
+  width:73% !important;
+  border:1px solid #ced4da;
+  border-radius: 0.25rem;
+  background-color: white !important;
+  padding: 5px;
+  margin-right: 3px;
+}

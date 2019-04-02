@@ -1,105 +1,100 @@
 import React from 'react';
-import Dropdown from 'react-bootstrap/Dropdown';
-import UserNavBar from './UserNavBar';
-import Table from 'react-bootstrap/Table'
-import './Home.css';
-import { MDBDataTable } from 'mdbreact';
-import books from '../../books';
+import { Card, ListGroup } from 'react-bootstrap';
+import { MyContext } from '../../App';
+import NavBar from '../Shared/Navbar';
+import PaginationComponent from '../Shared/Pagination';
+import BookCard from './BookCard';
 
 
-class UserHome extends React.Component {
-    state = {
-        books: books
+class UserHome extends React.PureComponent {
+    state={
+      showedBooks:[],
+      clickedFilter:'All',
     }
-    Allbooks = (e) => {
-        this.setState({ books: books })
+    getAllBooks=(allBooks,Books)=>
+    {
+        let books=[];
+     allBooks.map(bookID => Books.find(element => {
+            if (element.id === bookID)
+              books.push(<BookCard key={element.id} {...element} ></BookCard>);  
+        }) )
+      return books;
+
     }
-    Read = (e) => {
-        const onlyRead = books.filter(b => (b.read === true));
-        this.setState({ books: onlyRead })
-    }
-    currentlyReading = (e) => {
-        const currentlyreading = books.filter(b => (b.currentlyReading === true));
-        this.setState({ books: currentlyreading })
-    }
-    wantToRead = (e) => {
-        const wanttoread = books.filter(b => (b.wantToRead === true));
-        this.setState({ books: wanttoread })
+    handleClick=(loginedUser,Books)=>(e)=>
+    {
+        let filter=e.target.name;
+        this.setState({clickedFilter: filter});
+        let booksIDs;
+        if(filter=='All')
+        {
+            booksIDs=loginedUser.all;
+        }
+        else if(filter=='Currently Reading')
+        {
+            booksIDs=loginedUser.reading;
+           
+        }
+        else if(filter=='Read')
+        {
+            booksIDs=loginedUser.read;
+        }
+        else
+        {
+            booksIDs=loginedUser.wantToRead;
+        }
+       let books=[];
+        booksIDs.map(bookID => Books.find(element => {
+            if (element.id === bookID)
+              books.push(element);  
+        }) )
+        this.setState({showedBooks: books});
     }
     render() {
-        const data = {
-            columns: [
-                {
-                    label: 'Id',
-                    field: 'id',
-                    sort: 'asc',
-                    // width: 150
-                },
-                {
-                    label: 'Cover',
-                    field: 'cover',
-                    sort: 'asc',
-                    // width: 150
-                },
-                {
-                    label: 'Title',
-                    field: 'title',
-                    sort: 'asc',
-                    // width: 270
-                },
-                {
-                    label: 'Author',
-                    field: 'author',
-                    sort: 'asc',
-                    // width: 200
-                },
-                {
-                    label: 'Category',
-                    field: 'category',
-                    sort: 'asc',
-                    // width: 100
-                },
-                {
-                    label: 'Rating',
-                    field: 'rating',
-                    sort: 'asc',
-                    // width: 150
-                },
-                {
-                    label: 'Pages',
-                    field: 'pages',
-                    sort: 'asc',
-                    // width: 100
-                }
-            ],
-            rows: this.state.books
-
-        }
-
         return (
-            <>
-                <UserNavBar />
+            
+            <MyContext.Consumer>
 
-                <div className="sideMenu">
-                    {/* <Dropdown.Menu show> */}
-                    <Dropdown.Header>Bookshelves</Dropdown.Header>
-                    <Dropdown.Item eventKey="2" onClick={this.Allbooks}>All</Dropdown.Item>
-                    <Dropdown.Item eventKey="3" onClick={this.Read} >Read</Dropdown.Item>
-                    <Dropdown.Item eventKey="3" onClick={this.currentlyReading}>Currently Reading</Dropdown.Item>
-                    <Dropdown.Item eventKey="3" onClick={this.wantToRead}>Want To Read</Dropdown.Item>
+                {value =>
+                    (
+                        <>
+                        
+                <NavBar></NavBar>
+                <div className='BooksListing'>
+                   
+                <ListGroup style={{ width: '18rem' }}>
+                <ListGroup.Item action name='All' onClick={this.handleClick(value.state.loginedUser,value.state.Books)}>
+                          All
+                </ListGroup.Item>
+                <ListGroup.Item action name='Currently Reading' onClick={this.handleClick(value.state.loginedUser,value.state.Books)}>
+                     curently Reading
+                 </ListGroup.Item>
+                 <ListGroup.Item action name='Read' onClick={this.handleClick(value.state.loginedUser,value.state.Books)}>
+                        Read
+                 </ListGroup.Item>
+                 <ListGroup.Item action name='Want To Read' onClick={this.handleClick(value.state.loginedUser,value.state.Books)}>
+                        want to read
+                 </ListGroup.Item>
+                </ListGroup>
+                    <div style={{display:'flex',flexDirection:'column'}}>
+                    <Card  style={{ width: '15rem', marginLeft:'20px' }}>
+                        <Card.Body>{this.state.clickedFilter}</Card.Body>
+                    </Card>
+                    {
+                        this.state.showedBooks.length==0?
+                        this.getAllBooks(value.state.loginedUser.all,value.state.Books)
+                      :                          
+                     this.state.showedBooks.map(book=>(<BookCard key={book.id} {...book} clickedFilter={this.state.clickedFilter}></BookCard>))
+                        
 
-                    {/* </Dropdown.Menu> */}
-                    <div className="spliterline"></div>
+                    }
+                    <PaginationComponent></PaginationComponent>
+                    </div>
                 </div>
-                <div className="rightside">
-                    <MDBDataTable
-                        // small
-                        data={data}
-                    />
-
-                </div>
-
-            </>
+                </>
+               )
+            }
+        </MyContext.Consumer>
         )
     }
 }

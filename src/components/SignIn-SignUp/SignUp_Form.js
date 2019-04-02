@@ -48,12 +48,14 @@ class SignUp extends React.PureComponent {
          errors.push({name:'email',msg:'email already used'})
 
         if(repeatedPassword!=password)
+        
         errors.push({name:'repeatedPassword',msg:'Not matched with password'})
         this.setState({error: errors},()=>{
             if(this.state.error.length==0)
             {
-                const newUser={FName,LName,email,password,image};
+                const newUser={FName,LName,email,password,image,Admin: false,all:[],read:[],reading:[],wantToRead:[]};
                 addNewUser(newUser);
+                alert('Done');
                 this.setState({FName:'',LName:'',email:'',password:'',repeatedPassword:'',image:''})
             }
         })

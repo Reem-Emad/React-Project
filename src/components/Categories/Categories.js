@@ -2,7 +2,7 @@ import React from 'react';
 import { Dropdown, Row, Container, Col, Card, Button } from 'react-bootstrap';
 import './Categories.css';
 import categories from '../../Categories';
-import AllBooks from '../Books/AllBooks';
+import ListByCategory from '../Books/ListByCategory';
 class Categories extends React.Component {
     state = {
         selectedCategory: '',
@@ -32,7 +32,7 @@ class Categories extends React.Component {
                             {this.state.selectedCategory}
                             <br></br>
                             {
-                                <AllBooks selectedCategory={this.state.selectedCategory} />
+                                <ListByCategory selectedCategory={this.state.selectedCategory} />
                             }
 
 

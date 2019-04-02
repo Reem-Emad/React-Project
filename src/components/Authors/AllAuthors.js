@@ -1,7 +1,7 @@
 import React from 'react';
 import authors from '../../Authors';
 import { Link } from 'react-router-dom';
-import { Dropdown, Row, Container, Col, Card, Button, ButtonGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Row, Container, Col, Card} from 'react-bootstrap';
 class AllAuthors extends React.Component {
     render() {
         return (
