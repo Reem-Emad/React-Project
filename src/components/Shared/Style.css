@@ -2,7 +2,7 @@
 {
     background-color: #F4F1EA  !important;
     border-bottom: 2px solid #E6E5E2 !important;
-    position: absolute;
+    /* position: absolute; */
 }
 .navbarLinks
 {
@@ -14,4 +14,9 @@
     background-color: #382110 !important;
     border-color: #382110 !important;
     color: white !important;
+}
+.pages
+{
+    margin:auto !important;
+
 }

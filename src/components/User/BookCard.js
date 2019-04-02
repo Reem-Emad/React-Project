@@ -2,6 +2,7 @@ import React from 'react';
 import uuidv1 from 'uuid/v1';
 import { Card,Dropdown } from 'react-bootstrap';
 import DropdownMenu from 'react-bootstrap/DropdownMenu';
+import './Style.css';
 
 class UserBookCard extends React.PureComponent {
    

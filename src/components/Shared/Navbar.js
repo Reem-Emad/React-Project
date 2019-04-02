@@ -3,6 +3,8 @@ import { MyContext } from '../../App';
 import { BrowserRouter as Router, Route, Link, Switch, withRouter } from 'react-router-dom';
 import { Navbar, Nav, Form, FormControl, Button, Image } from 'react-bootstrap';
 import Default from '../../images/noPicture.jpg';
+import './Style.css';
+
 class NavBar extends React.PureComponent {
     handleLogOut=(e)=>{
         this.props.history.push('/');

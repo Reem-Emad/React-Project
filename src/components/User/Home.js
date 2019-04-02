@@ -1,4 +1,6 @@
 import React from 'react';
+import './Style.css';
+
 import { Card, ListGroup } from 'react-bootstrap';
 import { MyContext } from '../../App';
 import NavBar from '../Shared/Navbar';

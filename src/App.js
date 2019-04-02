@@ -11,17 +11,17 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 /////components
 import HomePage from './components/SignIn-SignUp/Home_Page';
 import UserHome from './components/User/Home';
-import Categories from './components/Categories/Categories';
+import Categories from './components/Categories/Menu';
 import BooksList from './components/Books/List';
 import AuthorDetails from './components/Authors/Details';
 import BookDetailes from './components/Books/BookDetails';
 import AllAuthors from './components/Authors/List';
-import CategoriesAdminList from './components/Categories/CategoriesAdminsList';
+import CategoriesAdminList from './components/Categories/Admin-List';
 
 
 import AdminBooksList from './components/Books/Admin-List';
 import AdminAuthorsList from './components/Authors/Admin-List';
-import AdminCategoriesList from './components/Categories/CategoriesAdminsList';
+import AdminCategoriesList from './components/Categories/Admin-List';
 import Authors from './Authors';
 import Books from './Books';
 import Users from './Users';
@@ -62,8 +62,6 @@ class App extends React.PureComponent {
                 <MyContext.Provider value={value}>
                     <Router>
                         <Switch>
-
-
                             <Route exact path="/" component={HomePage} />
                             <Route exact path="/user/home" component={UserHome} />
                             <Route exact path="/admin/home" component={UserHome} />
@@ -72,6 +70,7 @@ class App extends React.PureComponent {
                             <Route exact path="/user/authors" component={AllAuthors} />
                             <Route exact path="/admin/books" component={AdminBooksList} />
                             <Route exact path="/admin/authors" component={AdminAuthorsList} />
+                            <Route exact path="/admin/categories" component={AdminCategoriesList} />
                             <Route exact path="/bookDetailes/:id" component={BookDetailes} />
                             <Route exact path="/AuthorDetailes/:id" component={AuthorDetails} />
                         </Switch>
