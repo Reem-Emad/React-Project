@@ -7,10 +7,10 @@ class AllBooks extends React.Component {
         return (
             <>
                 {books.filter(b => (b.category === this.props.selectedCategory)).map(b => <div style={{ display: 'inline', margin: '20px' }} key={b.id} >
-                 <Book id={b.id} cover={b.cover} title={b.title} author={b.author} />
-                
+                    <Book id={b.id} cover={b.cover} title={b.title} author={b.author} />
+
                 </div>)
-            }
+                }
             </>
         )
 
