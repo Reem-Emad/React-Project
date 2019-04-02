@@ -3,6 +3,7 @@ import { Dropdown, Row, Container, Col, Card, Button } from 'react-bootstrap';
 import './Categories.css';
 import categories from '../../Categories';
 import AllBooks from '../Books/AllBooks';
+
 class Categories extends React.Component {
     state = {
         selectedCategory: '',
@@ -17,6 +18,9 @@ class Categories extends React.Component {
             <>
 
                 <Container className="Container">
+                <Row>
+                    
+                </Row>
                     <Row>
                         <Col sm="1"></Col>
                         <Col sm="2">

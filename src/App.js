@@ -24,7 +24,7 @@ import Authors from './Authors';
 
 import AdminBooksList from './components/Books/admin-list';
 import AdminAuthorsList from './components/Authors/admin-list';
-
+import AdminCategoriesList from './components/Categories/CategoriesAdminsList';
 
 
 library.add(faEdit)
@@ -69,6 +69,7 @@ class App extends React.PureComponent
                 <Route exact path="/user/authors" component={AllAuthors}/>  
                  <Route exact path="/admin/books" component={AdminBooksList} />
                  <Route exact path="/admin/authors" component={AdminAuthorsList} />
+                 <Route exact path="/admin/categories" component={AdminCategoriesList} />
                 <Route exact path="/bookDetailes/:id" component={BookDetailes}/>    
                 <Route exact path="/AuthorDetails/:id" component={AuthorDetails}/>  
                  </Switch>                
