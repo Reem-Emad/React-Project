@@ -67,7 +67,7 @@ class App extends React.PureComponent {
                             <Route exact path="/" component={HomePage} />
                             {
                                Object.keys(this.state.loginedUser).length == 0 ?
-                              <Route exact path="/" component={HomePage} />
+                              <Route exact path="/"/>
                               :
                                 
                             <Switch>
