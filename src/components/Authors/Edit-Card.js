@@ -15,6 +15,7 @@ class EditCard extends React.Component {
         this.state = {
             show: false,
             smShow: false,
+            name:'',
         };
     }
 
@@ -24,6 +25,26 @@ class EditCard extends React.Component {
 
     handleShow() {
         this.setState({ show: true });
+    }
+    handleChange=(e)=>{
+        const name = e.target.name;
+        const value = e.target.value;
+        this.setState({[name]:value});
+    }
+
+    handleSubmit=(e)=>{
+        e.preventDefault();
+        const {name}=this.state;
+        const validationContext = new SimpleSchema({
+            name:{
+                type: String,
+                min:2,
+                max:50,
+
+            }
+        }).newContext();
+        validationContext.validate({name});
+        console.log(validationContext.validationErrors());
     }
    
         
@@ -57,10 +78,10 @@ class EditCard extends React.Component {
                     </Modal.Header>
                     <Modal.Body>
 
-                        <Form>
+                        <Form onSubmit={this.handleSubmit}>
                             <Form.Group >
                                 <Form.Label>Name</Form.Label>
-                                <Form.Control type="text" placeholder={this.props.name} />
+                                <Form.Control name="name" value={this.state.name} onChange={this.handleChange} type="text" placeholder={this.props.name} />
                             </Form.Group>
                             <Form.Group >
                                 <Form.Label>Number of books</Form.Label>
@@ -98,7 +119,7 @@ class EditCard extends React.Component {
                         <Button variant="secondary" onClick={this.handleClose}>
                             Close
                        </Button>
-                        <Button variant="primary" onClick={this.handleClose}>
+                        <Button type="submit" variant="primary" onClick={this.handleClose}>
                             Save Changes
                        </Button>
                     </Modal.Footer>
