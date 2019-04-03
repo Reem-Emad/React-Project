@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, Col, Modal, Button, Form } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { MyContext } from '../../App';
+import SimpleSchema from 'simpl-schema';
 
 
 class EditCard extends React.Component {
