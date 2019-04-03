@@ -43,7 +43,7 @@ export default [
         password: 'yousry123mohamed',
         image: 'https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
       Admin: false,
-      all:[{id:1,state:'Read'},{id:3,state:'Reading'},{id:6,state:'Want To Read'}],
+      books:[{id:1,state:'Read'},{id:3,state:'Reading'},{id:6,state:'Want To Read'}],
 
         
     },

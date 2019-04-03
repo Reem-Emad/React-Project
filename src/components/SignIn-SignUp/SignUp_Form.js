@@ -1,7 +1,7 @@
 import React from 'react';
 import SimpleSchema from 'simpl-schema';
 import { MyContext } from '../../App';
-import { Form } from 'react-bootstrap';
+import { Form,Card } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import './Style.css';
 
@@ -54,7 +54,7 @@ class SignUp extends React.PureComponent {
         this.setState({error: errors},()=>{
             if(this.state.error.length==0)
             {
-                const newUser={FName,LName,email,password,image,Admin: false,all:[],read:[],reading:[],wantToRead:[]};
+                const newUser={FName,LName,email,password,image,Admin: false,books:[]};
                 addNewUser(newUser);
                 alert('Done');
                 this.setState({FName:'',LName:'',email:'',password:'',repeatedPassword:'',image:''})
@@ -73,13 +73,14 @@ class SignUp extends React.PureComponent {
 
             {value =>
                 (
-            <div style={{ height: '400px' }}>
+            <div style={{ height: '-webkit-fill-available' }}>
+              
                 <Form className='SignUp_form' onSubmit={this.handleSubmit(value.state.users,value.addNewUser)}>
-                    <Form.Text className="text-muted">
+                    <Form.Text className="text-muted SignUp_form-text">
                         New Here? Create a free account!
                     </Form.Text>
                     <Form.Group>
-                        <Form.Control type="text" name='FName' placeholder="First name" value={this.state.FName} onChange={this.handleChange} />
+                        <Form.Control  type="text" name='FName' placeholder="First name" value={this.state.FName} onChange={this.handleChange} />
                         <Form.Text style={{color: 'Red'}}>{
                                   this.state.error.map(e=> {
                                       if(e.name=='FName')
@@ -132,7 +133,7 @@ class SignUp extends React.PureComponent {
                         </Form.Text>
                     </Form.Group>
                     <Form.Group style={{ display: 'flex' }}>
-                        <Form.Control type="file" name='image' placeholder="upload Image" className="ImageUpload" value={this.state.image} onChange={this.handleChange} />
+                        <Form.Control  type="file" name='image' placeholder="upload Image" className="ImageUpload " value={this.state.image} onChange={this.handleChange} />
                         <Form.Text style={{color: 'Red'}}>{
                                   this.state.error.map(e=> {
                                       if(e.name=='image')
@@ -140,9 +141,7 @@ class SignUp extends React.PureComponent {
                                   })
                                     }
                         </Form.Text>
-                        {/* <Button variant="primary" type="submit" className='SignIn_form-btn'>
-                            upload image
-                       </Button> */}
+                        
                     </Form.Group>
                     <Button variant="primary" type="submit" className='SignUp_form-btn'>
                         Sign up

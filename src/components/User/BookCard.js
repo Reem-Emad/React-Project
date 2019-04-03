@@ -51,7 +51,7 @@ class UserBookCard extends React.PureComponent {
             <>
                 <Card className="BookCard">
                     <Card.Img variant="top" src={cover} className="BookCard_img" />
-                    <Card.Body style={{display:'flex',flexDirection:'row'}}>
+                    <Card.Body>
                         <Card.Text style={{marginRight:'10px',textDecoration:'underline'}}  onClick={this.getBook(title)} ><span style={{marginRight:'3px',color:'#58371F',fontWeight:'Bold'  }}>Title: </span>{title}</Card.Text>
                         <Card.Text style={{marginRight:'10px',textDecoration:'underline'}}  onClick={this.getAuthor(author)}><span style={{marginRight:'3px',color:'#58371F',fontWeight:'Bold'}}>Author: </span>{author}</Card.Text>
                         <Card.Text style={{marginRight:'10px'}} ><span style={{marginRight:'3px',color:'#58371F',fontWeight:'Bold'}}>AVG Rating: </span> {

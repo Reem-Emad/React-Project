@@ -1,7 +1,7 @@
 import React from 'react';
 import './Style.css';
 
-import { Card, ListGroup, CardDeck } from 'react-bootstrap';
+import { Card, ListGroup, CardDeck, Container } from 'react-bootstrap';
 import { MyContext } from '../../App';
 import NavBar from '../Shared/Navbar';
 import PaginationComponent from '../Shared/Pagination';
@@ -87,7 +87,7 @@ class UserHome extends React.PureComponent {
                 <NavBar></NavBar>
                 <div className='BooksListing'>
                    
-                <ListGroup style={{ width: '18rem' }}>
+                <ListGroup style={{ width: '20rem' }}>
                 <ListGroup.Item action name='All' onClick={this.handleClick(value.state.loginedUser,value.state.Books)}>
                           All
                 </ListGroup.Item>
@@ -105,10 +105,10 @@ class UserHome extends React.PureComponent {
                     <Card  style={{ width: '15rem', marginLeft:'20px' }}>
                         <Card.Body>{this.state.clickedFilter}</Card.Body>
                     </Card>
-                   
+                   <div style={{}}>
                     {
                         
-                        this.state.showedBooks.length==0?
+                        this.state.showedBooks.length==0 && value.state.loginedUser.books.length!=0?
                         this.getAllBooks(value.state.loginedUser.books,value.state.Books)
                       :   
                                        
@@ -116,9 +116,11 @@ class UserHome extends React.PureComponent {
                         
 
                     }
+                    </div>
                     <PaginationComponent></PaginationComponent>
                     </div>
                 </div>
+
                 </>
                )
             }

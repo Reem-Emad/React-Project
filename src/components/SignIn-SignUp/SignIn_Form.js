@@ -55,8 +55,8 @@ class SignIn extends React.PureComponent {
                 {value =>
                     (
                         <>
-                            <Navbar expand="lg">
-                                <Navbar.Brand href="#home"><Image src={Logo} /></Navbar.Brand>
+                            <Navbar expand="lg" className="HomePage_Navbar">
+                                <Navbar.Brand style={{marginLeft:'50px'}}><Image src={Logo} /></Navbar.Brand>
                                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                                 <Navbar.Collapse id="basic-navbar-nav">
                                     <Form inline className="SignIn_Form" onSubmit={this.handleSubmit(value.state.users,value.addLoginedUser)}>

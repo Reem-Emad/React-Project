@@ -1,7 +1,16 @@
 
 .HomePage
 {
-  background-image: url("../../images/masthead_background.jpg");
+  background-image: url("../../images/books.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+   
+}
+
+.HomePage_Navbar
+{
+  /* height:120px; */
+  background-color: #EFE4D6;
 }
 .SignIn_Form
 {
@@ -16,21 +25,30 @@
 }
 .SignUp_form
 {
-  width:35%;
+  width:36%;
   position: relative;
-  left:825px;
+  left:60%;
   margin:25px;
-
+  padding: 20px;
+  border: 2px solid #EFE4D6;
+  border-radius: 10px;
+  background-color: #EFE4D6;
+}
+.SignUp_form-text
+{
+  color: #58371F !important;
+  font-size: 25px;
+  font-weight: bold;
 }
 .SignUp_form-btn
 {
-  background-color:  #FFD56D !important;
-  border-color:  #FFD56D !important;
+  background-color: #58371F !important;
+  border-color: #58371F !important;
  
 }
 .ImageUpload
 {
-  width:73% !important;
+  
   border:1px solid #ced4da;
   border-radius: 0.25rem;
   background-color: white !important;
