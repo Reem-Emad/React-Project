@@ -3,7 +3,7 @@ import { Row, Col, Card, Form, Modal, Button } from 'react-bootstrap';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 
-export default class EditCategory extends Component {
+export default class AddCategory extends Component {
     constructor(props) {
         super(props);
 
@@ -17,19 +17,12 @@ export default class EditCategory extends Component {
         };
     }
 
-    componentDidMount(){
-        this.setState({
-            Name: this.props.Name,
-            show: this.props.show
-        })
-    }
-
     handleClose() {
-        this.props.hideUpdate();
+        this.setState({ show: false });
     }
 
     handleShow() {
-        this.props.ShowUpdate();
+        this.setState({ show: true });
     }
 
     handleChange = (e) => {
@@ -39,14 +32,13 @@ export default class EditCategory extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         if(this.state.Name.length >= 5){
-            const Id = this.props.Id ;
+            const Id = Math.floor(Math.random() * (5000)) + 1000 ;
             this.setState({
                 error: false,
                 Name: ''
             })
             //here should add the category using back end
-  
-         
+                      
             //finaly close modal
             this.handleClose();
         }
@@ -58,8 +50,18 @@ export default class EditCategory extends Component {
     render() {
         return (
             <>
-                
-                <Row>
+                <Row className="no-gutters">
+                    <Col key="0" className="m-3">
+                        <Card style={{ width: '18rem' }} onClick={this.handleShow}>
+                            <Card.Body>
+                                <Card.Title>Add Category
+                            <FontAwesomeIcon className="float-right" icon="plus" />
+                                </Card.Title>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                </Row>
+                <Row className="no-gutters">
                     <Modal show={this.state.show} onHide={this.handleClose}>
                         <Modal.Header>
                             <Modal.Title>Add Category</Modal.Title>
@@ -87,7 +89,7 @@ export default class EditCategory extends Component {
                                 Close
                        </Button>
                             <Button variant="primary" onClick={this.handleSubmit}>
-                                Edit
+                                Add
                        </Button>
                         </Modal.Footer>
                     </Modal>

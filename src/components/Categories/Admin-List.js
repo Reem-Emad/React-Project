@@ -6,7 +6,7 @@ import Navbar from '../Shared/Navbar';
 import { Row, Col, Card, Form, Modal, Button } from 'react-bootstrap';
 import { MyContext } from '../../App';
 import { timeout } from 'q';
-import AddCategory from './addCategort'
+import AddCategory from './Add-Category'
 
 class CategoriesAdminList extends React.Component {
 

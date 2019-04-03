@@ -32,7 +32,7 @@ class BookDetails extends React.Component {
                                         <Dropdown.Item hred="#/action-2">Currently Reading</Dropdown.Item>
                                         <Dropdown.Item hred="#/action-3">Add Shelf</Dropdown.Item>
                                     </Dropdown.Menu>
-                                </Dropdown>;
+                                </Dropdown>
                                 <div className="rate">
                                     <input type="radio" id="star5" name="rate" value="5" />
                                     <label htmlFor="star5" title="text">5 stars</label>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import EditCategory from './editCategory'
+import EditCategory from './Edit-Category'
 
 class EditCard extends React.Component {
     constructor(props) {
@@ -22,7 +22,7 @@ class EditCard extends React.Component {
     render() {
         return (
             <>
-                <Row>
+                <Row className="no-gutters">
                     <EditCategory 
                         Id={this.props.id}
                         Name={this.props.name}
