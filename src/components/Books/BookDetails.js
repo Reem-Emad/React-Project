@@ -1,18 +1,27 @@
 import React from 'react';
 import books from '../../Books';
+import Authors from '../../Authors';
 import Navbar from '../Shared/Navbar';
 import './Style.css';
 import { Dropdown, Row, Container, Col, Card, Button ,ButtonGroup ,Form} from 'react-bootstrap';
 
 class BookDetails extends React.Component {
+    getAuthor=(name)=>(e)=>{
+
+        const author= Authors.find(element => {
+             if(element.Name==name)
+                return element;
+         })
+         this.props.history.push(`/authorDetailes/${author.id}`);
+             
+           }
     render() {
         const id = this.props.match.params.id;
 
         let Book = books.find((b) => {
             return (b.id === +id);
         });
-        console.log(Book);
-
+             
         return (
             <>
                <Navbar></Navbar>
@@ -52,7 +61,7 @@ class BookDetails extends React.Component {
                             <Card style={{ width: '100%', border: 'none' }}>
                                 <Card.Body>
                                     <Card.Title>{Book.title}</Card.Title>
-                                    <Card.Subtitle className="mb-2 text-muted">By {Book.author}</Card.Subtitle>
+                                    <Card.Subtitle className="mb-2 text-muted" style={{cursor: 'pointer',textDecoration:'underline'}} onClick={this.getAuthor(Book.author)}>By {Book.author}</Card.Subtitle>
                                     {/* rating */}
 
                                     <div className="rate">

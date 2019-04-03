@@ -26,7 +26,7 @@ class BasicCard extends React.Component {
                                 <Card.Title>{this.props.title} </Card.Title>
                             </Link>
                                By:
-                                <Card.Text onClick={this.getAuthor(this.props.author)} style={{textDecoration:'underline',color:'#009CDA'}}>{this.props.author} </Card.Text>
+                                <Card.Text onClick={this.getAuthor(this.props.author)} style={{textDecoration:'underline',color:'#009CDA',cursor: 'pointer'}}>{this.props.author} </Card.Text>
                         </Card.Body>
                     </Card>
                 </Col>

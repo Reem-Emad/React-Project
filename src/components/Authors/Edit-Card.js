@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Card, Col, Modal, Button, Form } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { MyContext } from '../../App';
@@ -61,7 +62,7 @@ class EditCard extends React.Component {
                     <Card style={{ width: '18rem' }}>
                         <Card.Img variant="top" src={this.props.image} style={{ height: '20rem' }} />
                         <Card.Body>
-                            <Card.Title>{this.props.name}
+                            <Card.Title><Link to={`/AuthorDetailes/${this.props.id}`}>{this.props.name}</Link>
                                 <Card.Text className="float-right">
                                     <FontAwesomeIcon className="mr-3" icon="edit" onClick={this.handleShow} />
                                     <FontAwesomeIcon icon="trash-alt" onClick={()=>this.setState({ smShow: true })} />

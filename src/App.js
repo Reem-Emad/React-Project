@@ -54,20 +54,27 @@ class App extends React.PureComponent {
             addLoginedUser: this.addLoginedUser,
             updateAuthors: this.updateAuthors,
         }
-
+        
+             
+           if( Object.keys(this.state.loginedUser).length == 0  )
+            return(
+                <MyContext.Provider value={value}>
+                <Router>
+            
+                <Route exact to="/" component={HomePage}></Route>
+              
+                </Router>
+                </MyContext.Provider>
+            )
+            
+            
         return (
             <>
-          
+                    
                 <MyContext.Provider value={value}>
                     <Router>
-                     
-                            <Route exact path="/" component={HomePage} />
-                            { 
-                                Object.keys(this.state.loginedUser).length == 0 ?
-                              <Route exact path="/error" />
-                              :
-                            
                             <Switch>
+                            <Route exact path="/" component={HomePage} />
                             <Route exact path="/user/home" component={UserHome} />
                             <Route exact path="/admin/home" component={UserHome} />
                             <Route exact path="/user/books" component={BooksList} />
@@ -79,7 +86,7 @@ class App extends React.PureComponent {
                             <Route exact path="/bookDetailes/:id" component={BookDetailes} />
                             <Route exact path="/AuthorDetailes/:id" component={AuthorDetails} />   
                            </Switch>
-                            }
+                            
                     </Router>
                 </MyContext.Provider>
             </>
