@@ -1,5 +1,6 @@
 import React from 'react';
 import { Pagination } from 'react-bootstrap';
+import './Style.css';
 
 class PaginationComponent extends React.PureComponent {
     render() {

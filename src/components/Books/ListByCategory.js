@@ -1,7 +1,7 @@
 import React from 'react';
 import books from '../../Books';
 import { Dropdown, Row, Container, Col, Card, Button } from 'react-bootstrap';
-import Book from './basic-card';
+import Book from './Basic-Card';
 class AllBooks extends React.Component {
     render() {
         return (

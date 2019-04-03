@@ -48,5 +48,10 @@
 [0331/224303.855:ERROR:crash_report_database_win.cc(428)] unexpected header
 [0401/140252.287:ERROR:crash_report_database_win.cc(428)] unexpected header
 [0402/092319.040:ERROR:crash_report_database_win.cc(428)] unexpected header
+<<<<<<< HEAD
+[0402/135142.500:ERROR:crash_report_database_win.cc(428)] unexpected header
+=======
 >>>>>>> 2db5b40323293080c024f658907ba471c8a92ffc
 [0402/134827.655:ERROR:crash_report_database_win.cc(428)] unexpected header
+>>>>>>> 487ce74e9d61e6e4faf011deed32e5f103e5f0fd
+[0402/142128.656:ERROR:crash_report_database_win.cc(428)] unexpected header

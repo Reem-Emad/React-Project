@@ -1,10 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import './components/SignIn-SignUp/SignIn-SignUp.css';
-import './components/Shared/Navbar.css';
-import './components/Shared/Pagination.css';
-import './components/User/User.css';
 import './font-awesome/css/all.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';

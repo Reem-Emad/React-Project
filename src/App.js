@@ -11,19 +11,21 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 /////components
 import HomePage from './components/SignIn-SignUp/Home_Page';
 import UserHome from './components/User/Home';
-import Categories from './components/Categories/Categories';
+import Categories from './components/Categories/Menu';
 import BooksList from './components/Books/List';
-import AuthorDetails from './components/Authors/Authors';
+import AuthorDetails from './components/Authors/Details';
 import BookDetailes from './components/Books/BookDetails';
-import Users from './Users';
 import AllAuthors from './components/Authors/List';
-import CategoriesAdminList from './components/Categories/CategoriesAdminsList';
-import Books from './Books';
+import CategoriesAdminList from './components/Categories/Admin-List';
 
 
-import AdminBooksList from './components/Books/admin-list';
-import AdminAuthorsList from './components/Authors/admin-list';
+import AdminBooksList from './components/Books/Admin-List';
+import AdminAuthorsList from './components/Authors/Admin-List';
+import AdminCategoriesList from './components/Categories/Admin-List';
 import Authors from './Authors';
+import Books from './Books';
+import Users from './Users';
+import { SSL_OP_DONT_INSERT_EMPTY_FRAGMENTS } from 'constants';
 
 
 library.add(faEdit);
@@ -58,12 +60,17 @@ class App extends React.PureComponent {
 
         return (
             <>
+          
                 <MyContext.Provider value={value}>
                     <Router>
-                        <Switch>
-
-
+                       
                             <Route exact path="/" component={HomePage} />
+                            { 
+                                Object.keys(this.state.loginedUser).length == 0 ?
+                              <Route exact path="/"/>
+                              :
+                            
+                            <Switch>
                             <Route exact path="/user/home" component={UserHome} />
                             <Route exact path="/admin/home" component={UserHome} />
                             <Route exact path="/user/books" component={BooksList} />
@@ -71,9 +78,12 @@ class App extends React.PureComponent {
                             <Route exact path="/user/authors" component={AllAuthors} />
                             <Route exact path="/admin/books" component={AdminBooksList} />
                             <Route exact path="/admin/authors" component={AdminAuthorsList} />
+                            <Route exact path="/admin/categories" component={AdminCategoriesList} />
                             <Route exact path="/bookDetailes/:id" component={BookDetailes} />
-                            <Route exact path="/AuthorDetailes/:id" component={AuthorDetails} />
-                        </Switch>
+                            <Route exact path="/AuthorDetailes/:id" component={AuthorDetails} />   
+                           </Switch>
+                            }
+                            
                     </Router>
                 </MyContext.Provider>
             </>

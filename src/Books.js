@@ -2,7 +2,7 @@ export default [
    {
       "id": 1,
       "title": "My Lovely Wife",
-      "author": "Samantha Downing ",
+      "author": "Rick Riordan",
       "category": "Thriller",
       "rating": 4,
       "pages": 359,
@@ -13,7 +13,7 @@ export default [
    {
       "id": 2,
       "title": "Lock Every Door",
-      "author": "Riley Sager",
+      "author": "Rick Riordan",
       "category": "Mystery",
       "rating": 4,
       "pages": 384,
@@ -23,7 +23,7 @@ export default [
    {
       "id": 3,
       "title": "The Night Tiger",
-      "author": "Yangsze Choo",
+      "author": "Rick Riordan",
       "category": "Fiction",
       "rating": 4,
       "pages": 384,
@@ -33,7 +33,7 @@ export default [
    {
       "id": 4,
       "title": "The One",
-      "author": " Kiera Cass ",
+      "author": "Stephen King",
       "category": "Romance",
       "rating": 4,
       "pages": 323,
@@ -43,7 +43,7 @@ export default [
    {
       "id": 5,
       "title": "The Heir",
-      "author": " Kiera Cass ",
+      "author": "Rick Riordan",
       "category": "Fantasy",
       "rating": 4,
       "pages": 342,
@@ -53,7 +53,7 @@ export default [
    {
       "id": 6,
       "title": "The Last Time I Lied",
-      "author": " Riley Sager",
+      "author": "Cassandra Clare",
       "category": "Mystery",
       "rating": 3,
       "pages": 384,
@@ -63,7 +63,7 @@ export default [
    {
       "id": 7,
       "title": "The Ghost Bride",
-      "author": " Yangsze Choo",
+      "author": "Cassandra Clare",
       "category": "Fantasy",
       "rating": 3,
       "pages": 368,
@@ -73,7 +73,7 @@ export default [
    {
       "id": 8,
       "title": "The River of No Return",
-      "author": " Bee Ridgway",
+      "author": "Neil Gaiman",
       "category": "Romance",
       "rating": 3,
       "pages": 464,
@@ -83,7 +83,7 @@ export default [
    {
       "id": 9,
       "title": "The Beautiful Land",
-      "author": "Alan Averill",
+      "author": "Neil Gaiman",
       "category": "Science Fiction",
       "rating": 3,
       "pages": 362,
@@ -93,7 +93,7 @@ export default [
    {
       "id": 10,
       "title": "Heart of Briar",
-      "author": "Laura Anne Gilman",
+      "author": "Neil Gaiman",
       "category": "Fiction",
       "rating": 3,
       "pages": 394,

@@ -1,7 +1,10 @@
 import React from 'react';
-import uuidv1 from 'uuid/v1';
 import { Card,Dropdown } from 'react-bootstrap';
-import DropdownMenu from 'react-bootstrap/DropdownMenu';
+import { BrowserRouter as Router, Route, Link, Switch, withRouter } from 'react-router-dom';
+import Books from '../../Books';
+import Authors from '../../Authors';
+
+import './Style.css';
 
 class UserBookCard extends React.PureComponent {
    
@@ -15,17 +18,33 @@ class UserBookCard extends React.PureComponent {
         }
         return avgRatingstars;
     }
+    getBook=(title)=>(e)=>{
+        const book= Books.find(element => {
+            if(element.title==title)
+               return element;
+        })
+        this.props.history.push(`/bookDetailes/${book.id}`);
+            
+    }
+    getAuthor=(name)=>(e)=>{
+        const author= Authors.find(element => {
+            if(element.Name==name)
+               return element;
+        })
+        this.props.history.push(`/authorDetailes/${author.id}`);
+            
+    }
     render() {
-        const { title,author,rating,cover } = this.props;
+        const { title,author,rating,cover,state } = this.props;
 
-        //  const clickedFilter=this.props.clickedFilter;
-        //  let otherFilters=[];
-        //  if(clickedFilter=='All')
-        //  otherFilters.push('Want To Read','Read')
-        //  else if(clickedFilter=='Want To Read') 
-        //  otherFilters.push('All','Read')
-        //  else
-        //  otherFilters.push('Want To Read','All')
+         
+         let otherFilters=[];
+         if(state=='Read')
+         otherFilters.push({id:3,state:'Want To Read'},{id:1,state:'Reading'})
+         else if(state=='Want To Read') 
+         otherFilters.push({id:2,state:'Read'},{id:1,state:'Reading'})
+         else
+         otherFilters.push({id:3,state:'Want To Read'},{id:2,state:'Read'})
 
 
         return (
@@ -33,8 +52,8 @@ class UserBookCard extends React.PureComponent {
                 <Card className="BookCard">
                     <Card.Img variant="top" src={cover} className="BookCard_img" />
                     <Card.Body style={{display:'flex',flexDirection:'row'}}>
-                        <Card.Text style={{marginRight:'10px'}}><span style={{marginRight:'3px',color:'#58371F',fontWeight:'Bold'}}>Title: </span>{title}</Card.Text>
-                        <Card.Text style={{marginRight:'10px'}}><span style={{marginRight:'3px',color:'#58371F',fontWeight:'Bold'}}>Author: </span>{author}</Card.Text>
+                        <Card.Text style={{marginRight:'10px',textDecoration:'underline'}}  onClick={this.getBook(title)} ><span style={{marginRight:'3px',color:'#58371F',fontWeight:'Bold'  }}>Title: </span>{title}</Card.Text>
+                        <Card.Text style={{marginRight:'10px',textDecoration:'underline'}}  onClick={this.getAuthor(author)}><span style={{marginRight:'3px',color:'#58371F',fontWeight:'Bold'}}>Author: </span>{author}</Card.Text>
                         <Card.Text style={{marginRight:'10px'}} ><span style={{marginRight:'3px',color:'#58371F',fontWeight:'Bold'}}>AVG Rating: </span> {
                             this.displayStars(rating)
                           
@@ -44,17 +63,15 @@ class UserBookCard extends React.PureComponent {
                         <Card.Text style={{marginRight:'10px'}}><span style={{marginRight:'3px',color:'#58371F',fontWeight:'Bold'}}>Rating:</span> <i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i></Card.Text>
                         <Dropdown  >
                             <Dropdown.Toggle variant="success" id="dropdown-basic" className="BookCars_dropdown--btn">
-                                Reading
+                               {state}
                             </Dropdown.Toggle>
 
-                            {/* <Dropdown.Menu className='BookCars_dropdown--list'>
+                            <Dropdown.Menu className='BookCars_dropdown--list'>
                             {
-                                otherFilters.map(filter=> (<Dropdown.Item key={uuidv1()} className='BookCars_dropdown--listItem'>{filter}</Dropdown.Item>))
-                            } */}
-                            <Dropdown.Menu>
-                                <Dropdown.Item className='BookCars_dropdown--listItem'>Read</Dropdown.Item>
-                                <Dropdown.Item className='BookCars_dropdown--listItem'>want to read</Dropdown.Item>
+                                otherFilters.map(filter=> (<Dropdown.Item key={filter.id} className='BookCars_dropdown--listItem'>{filter.state}</Dropdown.Item>))
+                            }
                             </Dropdown.Menu>
+                         
                         </Dropdown>
                     </Card.Body>
                 </Card>
@@ -62,4 +79,4 @@ class UserBookCard extends React.PureComponent {
         )
     }
 }
-export default UserBookCard;
+export default withRouter(UserBookCard);

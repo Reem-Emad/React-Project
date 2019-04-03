@@ -6,6 +6,7 @@ import { Button } from 'react-bootstrap';
 import { Image } from 'react-bootstrap';
 import { MyContext } from '../../App';
 import Logo from '../../images/logo.png';
+import './Style.css';
 
 class SignIn extends React.PureComponent {
 
