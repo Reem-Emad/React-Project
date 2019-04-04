@@ -38,3 +38,7 @@
     flex-direction: row;
     margin:25px
 }
+.checked
+{
+    color:#c59b08;
+}

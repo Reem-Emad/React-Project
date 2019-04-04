@@ -73,7 +73,7 @@ class SignUp extends React.PureComponent {
 
             {value =>
                 (
-            <div style={{ height: '-webkit-fill-available' }}>
+            <div style={{ height: '560px' }}>
               
                 <Form className='SignUp_form' onSubmit={this.handleSubmit(value.state.users,value.addNewUser)}>
                     <Form.Text className="text-muted SignUp_form-text">

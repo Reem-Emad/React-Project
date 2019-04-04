@@ -14,7 +14,7 @@ class UserBookCard extends React.PureComponent {
        let avgRatingstars=[];
         for(var i=0;i<rating;i++)
         {
-            avgRatingstars.push(<i key={i} className="fas fa-star"></i>);
+            avgRatingstars.push(<i key={i} className="fas fa-star checked"></i>);
         }
         return avgRatingstars;
     }
@@ -60,7 +60,15 @@ class UserBookCard extends React.PureComponent {
                             }
                         
                         </Card.Text>
-                        <Card.Text style={{marginRight:'10px'}}><span style={{marginRight:'3px',color:'#58371F',fontWeight:'Bold'}}>Rating:</span> <i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i></Card.Text>
+                        <Card.Text style={{marginRight:'10px'}}>
+                        <span style={{marginRight:'3px',color:'#58371F',fontWeight:'Bold'}}>Rating:</span>
+                         <i className="fas fa-star checked"></i>
+                         <i className="fas fa-star checked"></i>
+                         <i className="fas fa-star checked"></i>
+                         <i className="fas fa-star checked"></i>
+                         <i className="fas fa-star checked"></i>
+                         </Card.Text>
+                      
                         <Dropdown  >
                             <Dropdown.Toggle variant="success" id="dropdown-basic" className="BookCars_dropdown--btn">
                                {state}
